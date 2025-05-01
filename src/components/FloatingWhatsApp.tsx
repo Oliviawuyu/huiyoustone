@@ -49,7 +49,7 @@ const FloatingContactButtons = () => {
                     )}
                     aria-label="LINE 聊天"
                 >
-                    <img src="/icon/icon-line.png" alt="LINE" className="w-6 h-6 object-contain" />
+                    <img src="/huiyoustone/icon/icon-line.png" alt="LINE" className="w-6 h-6 object-contain" />
                 </button>
             </a>
 

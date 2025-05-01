@@ -16,14 +16,14 @@ const ProductsPage = () => {
     {
       id: 1,
       name: "比利時木紋",
-      image: "/product/p1/A01-01.jpg",
-      description: "比利時進口高級木紋石材，紋理自然優美，適合用於高檔室內裝潢。",
+      image: "/huiyoustone/pic/product/p1/A01-01.jpg",
+      description: "高級木紋石材，紋理自然優美，適合用於高檔室內裝潢。",
       detailImages: [
-        "/product/p1/A01-01.jpg",
-        "/product/p1/A01-02.jpg",
-        "/product/p1/A01-03.jpg",
-        "/product/p1/A01-04.jpg",
-        "/product/p1/A01-05.jpg"
+        "/huiyoustone/pic/product/p1/A01-01.jpg",
+        "/huiyoustone/pic/product/p1/A01-02.jpg",
+        "/huiyoustone/pic/product/p1/A01-03.jpg",
+        "/huiyoustone/pic/product/p1/A01-04.jpg",
+        "/huiyoustone/pic/product/p1/A01-05.jpg"
       ],
       specifications: {
         origin: "",
@@ -263,7 +263,7 @@ const ProductsPage = () => {
                           rel="noopener noreferrer"
                           className="w-8 h-8 rounded-full bg-[#06C755] flex items-center justify-center hover:bg-[#05b44c] transition-colors shadow-md"
                       >
-                        <img src="/icon/icon-line.png" alt="LINE" className="w-5 h-5 object-contain" />
+                        <img src="/huiyoustone/icon/icon-line.png" alt="LINE" className="w-5 h-5 object-contain" />
                       </a>
 
                       {/* 電話按鈕 */}
