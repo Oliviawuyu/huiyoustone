@@ -5225,18 +5225,19 @@ const FloatingContactButtons = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "a",
       {
+        href: `https://line.me/ti/p/${lineId}`,
         target: "_blank",
-        href: `line://ti/p/${lineId}`,
+        rel: "noopener noreferrer",
         className: "block",
         children: /* @__PURE__ */ jsxRuntimeExports.jsx(
           "button",
           {
             className: cn(
               "p-3 rounded-full shadow-lg transition-all",
-              "bg-[#06C755] text-white hover:bg-blue-800"
+              "bg-[#06C755] text-white hover:bg-[#05b44c]"
             ),
             "aria-label": "LINE 聊天",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/src/assets/icon/icon-line.png", alt: "LINE", className: "w-6 h-6 object-contain" })
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/icon/icon-line.png", alt: "LINE", className: "w-6 h-6 object-contain" })
           }
         )
       }
@@ -5468,7 +5469,7 @@ const AboutPage = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-12", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         "img",
         {
-          src: "@/assets/pic/about-01.jpg",
+          src: "/about-01.jpg",
           alt: "蕙佑石材",
           className: "w-full h-auto rounded-lg shadow-lg"
         }
@@ -5488,8 +5489,64 @@ const AboutPage = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white p-6 rounded-lg shadow-md", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold mb-3", children: "客製化服務" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700", children: "根據客戶的需求，提供客製化的石材解決方案，滿足不同空間和風格的需求。" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white p-6 rounded-lg shadow-md", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold mb-3", children: "品質保證" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700", children: "我們對每一塊石材的品質進行嚴格把關，確保客戶獲得最優質的產品和最滿意的服務。" })
         ] })
       ] })
+    ] }) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-16", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "container mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-3xl mx-auto", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SectionTitle, { chineseTitle: "聯絡我們", englishTitle: "Contact Us" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "bg-white p-8 rounded-lg shadow-md", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold mb-4", children: "聯絡資訊" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "space-y-3 text-gray-700", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold mr-2", children: "電話：" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "tel:0978-218598", className: "hover:text-blue-600", children: "0978-218598" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold mr-2", children: "LINE：" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "bosen0529" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold mr-2", children: "地址：" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("address", { className: "not-italic", children: "新北市新莊區福貴街98號" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold mr-2", children: "營業時間：" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "週一至週六 09:00-18:00" })
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold mb-4", children: "服務地區" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-4", children: "我們的服務遍及全台灣，包括台北、新北、桃園、新竹、台中、台南、高雄等地區。無論您在哪裡，我們都能提供專業的石材服務。" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex space-x-4 mt-6", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "a",
+              {
+                href: "https://www.facebook.com/huiyoustone/",
+                target: "_blank",
+                rel: "noopener noreferrer",
+                className: "bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { xmlns: "http://www.w3.org/2000/svg", width: "20", height: "20", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z" }) })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "a",
+              {
+                href: "https://line.me/ti/p/bosen0529",
+                target: "_blank",
+                rel: "noopener noreferrer",
+                className: "bg-[#06C755] text-white p-2 rounded-full hover:bg-[#05b44c] transition-colors",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/icon/icon-line.png", alt: "LINE", className: "w-5 h-5" })
+              }
+            )
+          ] })
+        ] })
+      ] }) })
     ] }) }) })
   ] });
 };
@@ -5507,43 +5564,43 @@ const GalleryPage = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "@/assets/pic/c/c7.jpg",
+      src: "/pic/c/c7.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 2,
-      src: "@/assets/pic/c/c6.jpg",
+      src: "/pic/c/c6.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 3,
-      src: "@/assets/pic/c/c5.jpg",
+      src: "/pic/c/c5.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 4,
-      src: "@/assets/pic/c/c4.jpg",
+      src: "/pic/c/c4.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 5,
-      src: "@/assets/pic/c/c3.jpg",
+      src: "/pic/c/c3.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 6,
-      src: "@/assets/pic/c/c2.jpg",
+      src: "/pic/c/c2.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 7,
-      src: "@/assets/pic/c/c1.jpg",
+      src: "/pic/c/c1.jpg",
       alt: "礦區實照",
       title: ""
     }
@@ -5578,7 +5635,10 @@ const GalleryPage = () => {
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-16 bg-gray-50", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "container mx-auto px-4", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(SectionTitle, { chineseTitle: "礦區介紹", englishTitle: "Our Quarry" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-3xl mx-auto prose prose-lg" })
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-3xl mx-auto prose prose-lg", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "我們的礦區位於精心挑選的地質區域，擁有豐富優質的石材資源。這些礦區經過嚴格的環境評估和規劃， 確保我們能以可持續和負責任的方式開採石材。我們使用先進的採礦技術，不僅提高效率， 還能最大程度地減少對環境的影響。" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "每個礦區都由經驗豐富的專業團隊管理，他們確保採礦過程符合最高的安全和質量標準。 從礦區開採的石材經過嚴格的品質檢驗，只有符合我們高標準的石材才會被送往加工廠， 進行進一步的切割、打磨和加工，最終成為您看到的優質成品。" })
+      ] })
     ] }) }),
     selectedImage && /* @__PURE__ */ jsxRuntimeExports.jsx(
       "div",
@@ -5624,14 +5684,14 @@ const ProductsPage = () => {
     {
       id: 1,
       name: "比利時木紋",
-      image: "@/assets/pic/product/p1/A01-01.jpg",
+      image: "/product/p1/A01-01.jpg",
       description: "比利時進口高級木紋石材，紋理自然優美，適合用於高檔室內裝潢。",
       detailImages: [
-        "@/assets/pic/product/p1/A01-01.jpg",
-        "@/assets/pic/product/p1/A01-02.jpg",
-        "@/assets/pic/product/p1/A01-03.jpg",
-        "@/assets/pic/product/p1/A01-04.jpg",
-        "@/assets/pic/product/p1/A01-05.jpg"
+        "/product/p1/A01-01.jpg",
+        "/product/p1/A01-02.jpg",
+        "/product/p1/A01-03.jpg",
+        "/product/p1/A01-04.jpg",
+        "/product/p1/A01-05.jpg"
       ],
       specifications: {
         origin: "",
@@ -5784,6 +5844,10 @@ const ProductsPage = () => {
                   )
                 ] }) }),
                 activeTab === "info" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 gap-6 mb-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-lg space-y-5 text-gray-700", children: [
+                  selectedProduct.specifications.origin && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+                    "產地：",
+                    selectedProduct.specifications.origin
+                  ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
                     "尺寸：",
                     selectedProduct.specifications.size
@@ -5827,10 +5891,11 @@ const ProductsPage = () => {
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
                       "a",
                       {
+                        href: `https://line.me/ti/p/${lineId}`,
                         target: "_blank",
-                        href: `https://line.me/ti/p/~${lineId}`,
-                        className: "w-8 h-8 rounded-full bg-green-500 flex items-center justify-center hover:bg-green-600 transition-colors shadow-md",
-                        children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/src/assets/icon/icon-line.png", alt: "LINE", className: "w-6 h-6 object-contain" })
+                        rel: "noopener noreferrer",
+                        className: "w-8 h-8 rounded-full bg-[#06C755] flex items-center justify-center hover:bg-[#05b44c] transition-colors shadow-md",
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/icon/icon-line.png", alt: "LINE", className: "w-5 h-5 object-contain" })
                       }
                     ),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -5859,10 +5924,20 @@ const ProductsPage = () => {
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-16 bg-gray-50", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "container mx-auto px-4", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(SectionTitle, { chineseTitle: "石材應用", englishTitle: "Applications" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6 mt-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white p-6 rounded-lg shadow-md", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold mb-3", children: "室內地板" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-4", children: "石材地板不僅美觀耐用，還具有良好的保溫性能，適合各種室內空間。" })
-      ] }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6 mt-8", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white p-6 rounded-lg shadow-md", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold mb-3", children: "室內地板" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-4", children: "石材地板不僅美觀耐用，還具有良好的保溫性能，適合各種室內空間。" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white p-6 rounded-lg shadow-md", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold mb-3", children: "牆面裝飾" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-4", children: "石材牆面能夠為空間增添質感和層次，是高級裝修的首選材料。" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white p-6 rounded-lg shadow-md", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold mb-3", children: "檯面應用" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-4", children: "石材檯面耐高溫、耐刮擦，是廚房和浴室的理想選擇。" })
+        ] })
+      ] })
     ] }) })
   ] });
 };
