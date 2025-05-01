@@ -5684,14 +5684,14 @@ const ProductsPage = () => {
     {
       id: 1,
       name: "比利時木紋",
-      image: "/pic/product/p1/A01-01.jpg",
+      image: "/huiyoustone/pic/product/p1/A01-01.jpg",
       description: "高級木紋石材，紋理自然優美，適合用於高檔室內裝潢。",
       detailImages: [
-        "/pic/product/p1/A01-01.jpg",
-        "/pic/product/p1/A01-02.jpg",
-        "/pic/product/p1/A01-03.jpg",
-        "/pic/product/p1/A01-04.jpg",
-        "/pic/product/p1/A01-05.jpg"
+        "/huiyoustone/pic/product/p1/A01-01.jpg",
+        "/huiyoustone/pic/product/p1/A01-02.jpg",
+        "/huiyoustone/pic/product/p1/A01-03.jpg",
+        "/huiyoustone/pic/product/p1/A01-04.jpg",
+        "/huiyoustone/pic/product/p1/A01-05.jpg"
       ],
       specifications: {
         origin: "",
