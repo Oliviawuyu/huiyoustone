@@ -5468,7 +5468,7 @@ const AboutPage = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-12", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         "img",
         {
-          src: "/src/assets/pic/about-01.jpg",
+          src: "@/assets/pic/about-01.jpg",
           alt: "蕙佑石材",
           className: "w-full h-auto rounded-lg shadow-lg"
         }
@@ -5507,43 +5507,43 @@ const GalleryPage = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "/src/assets/pic/c/c7.jpg",
+      src: "@/assets/pic/c/c7.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 2,
-      src: "/src/assets/pic/c/c6.jpg",
+      src: "@/assets/pic/c/c6.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 3,
-      src: "/src/assets/pic/c/c5.jpg",
+      src: "@/assets/pic/c/c5.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 4,
-      src: "/src/assets/pic/c/c4.jpg",
+      src: "@/assets/pic/c/c4.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 5,
-      src: "/src/assets/pic/c/c3.jpg",
+      src: "@/assets/pic/c/c3.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 6,
-      src: "/src/assets/pic/c/c2.jpg",
+      src: "@/assets/pic/c/c2.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 7,
-      src: "/src/assets/pic/c/c1.jpg",
+      src: "@/assets/pic/c/c1.jpg",
       alt: "礦區實照",
       title: ""
     }
@@ -5624,14 +5624,14 @@ const ProductsPage = () => {
     {
       id: 1,
       name: "比利時木紋",
-      image: "/src/assets/pic/product/p1/A01-01.jpg",
+      image: "@/assets/pic/product/p1/A01-01.jpg",
       description: "比利時進口高級木紋石材，紋理自然優美，適合用於高檔室內裝潢。",
       detailImages: [
-        "/src/assets/pic/product/p1/A01-01.jpg",
-        "/src/assets/pic/product/p1/A01-02.jpg",
-        "/src/assets/pic/product/p1/A01-03.jpg",
-        "/src/assets/pic/product/p1/A01-04.jpg",
-        "/src/assets/pic/product/p1/A01-05.jpg"
+        "@/assets/pic/product/p1/A01-01.jpg",
+        "@/assets/pic/product/p1/A01-02.jpg",
+        "@/assets/pic/product/p1/A01-03.jpg",
+        "@/assets/pic/product/p1/A01-04.jpg",
+        "@/assets/pic/product/p1/A01-05.jpg"
       ],
       specifications: {
         origin: "",
