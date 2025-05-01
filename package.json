@@ -10,7 +10,7 @@
     "build": "npm run typecheck && vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519' gh-pages -d dist"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.0.2",
