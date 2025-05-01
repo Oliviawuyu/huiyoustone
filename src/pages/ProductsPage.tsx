@@ -258,7 +258,7 @@ const ProductsPage = () => {
 
                       {/* LINE 按鈕 */}
                       <a
-                          href={`https://line.me/ti/p/${lineId}`}
+                          href={`line://ti/p/${lineId}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-8 h-8 rounded-full bg-[#06C755] flex items-center justify-center hover:bg-[#05b44c] transition-colors shadow-md"

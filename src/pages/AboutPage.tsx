@@ -103,14 +103,6 @@ const AboutPage = () => {
                         <span className="font-semibold mr-2">LINE：</span>
                         <span>bosen0529</span>
                       </li>
-                      <li className="flex items-start">
-                        <span className="font-semibold mr-2">地址：</span>
-                        <address className="not-italic">新北市新莊區福貴街98號</address>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="font-semibold mr-2">營業時間：</span>
-                        <span>週一至週六 09:00-18:00</span>
-                      </li>
                     </ul>
                   </div>
 
@@ -131,7 +123,7 @@ const AboutPage = () => {
                         </svg>
                       </a>
                       <a
-                          href="https://line.me/ti/p/bosen0529"
+                          href="line://ti/p/bosen0529"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-[#06C755] text-white p-2 rounded-full hover:bg-[#05b44c] transition-colors"
