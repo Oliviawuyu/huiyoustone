@@ -5509,14 +5509,6 @@ const AboutPage = () => {
             /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold mr-2", children: "LINE：" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "bosen0529" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold mr-2", children: "地址：" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("address", { className: "not-italic", children: "新北市新莊區福貴街98號" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold mr-2", children: "營業時間：" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "週一至週六 09:00-18:00" })
             ] })
           ] })
         ] }),
@@ -5537,7 +5529,7 @@ const AboutPage = () => {
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               "a",
               {
-                href: "https://line.me/ti/p/bosen0529",
+                href: "line://ti/p/bosen0529",
                 target: "_blank",
                 rel: "noopener noreferrer",
                 className: "bg-[#06C755] text-white p-2 rounded-full hover:bg-[#05b44c] transition-colors",
@@ -5891,7 +5883,7 @@ const ProductsPage = () => {
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
                       "a",
                       {
-                        href: `https://line.me/ti/p/${lineId}`,
+                        href: `line://ti/p/${lineId}`,
                         target: "_blank",
                         rel: "noopener noreferrer",
                         className: "w-8 h-8 rounded-full bg-[#06C755] flex items-center justify-center hover:bg-[#05b44c] transition-colors shadow-md",
