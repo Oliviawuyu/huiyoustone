@@ -16,19 +16,20 @@ const ProductsPage = () => {
     {
       id: 1,
       name: "比利時木紋",
-      image: "https://pic03.eapple.com.tw/huiyoustone/about-05.jpg",
+      image: "/src/assets/pic/product/p1/A01-01.jpg",
       description: "比利時進口高級木紋石材，紋理自然優美，適合用於高檔室內裝潢。",
       detailImages: [
-        "https://pic03.eapple.com.tw/huiyoustone/about-05.jpg",
-        "https://pic03.eapple.com.tw/huiyoustone/about-06.jpg",
-        "https://pic03.eapple.com.tw/huiyoustone/about-07.jpg",
-        "https://pic03.eapple.com.tw/huiyoustone/about-08.jpg"
+        "/src/assets/pic/product/p1/A01-01.jpg",
+        "/src/assets/pic/product/p1/A01-02.jpg",
+        "/src/assets/pic/product/p1/A01-03.jpg",
+        "/src/assets/pic/product/p1/A01-04.jpg",
+        "/src/assets/pic/product/p1/A01-05.jpg"
       ],
       specifications: {
-        origin: "比利時",
+        origin: "",
         size: "標準板材尺寸：240 x 120 公分",
-        thickness: "可選厚度：1.5cm、2cm、3cm",
-        finish: "拋光、磨砂、亞光",
+        thickness: "可選厚度：2cm、3cm",
+        finish: "拋光、平光、仿古",
         application: "地板、牆面、檯面等"
       }
     },
@@ -83,7 +84,7 @@ const ProductsPage = () => {
 
   // 聯絡資訊
   const phoneNumber = '0978-218598';
-  const lineId = 'your_line_id';
+  const lineId = 'bosen0529';
   const facebookUrl = 'https://www.facebook.com/huiyoustone/';
 
   return (
@@ -151,16 +152,16 @@ const ProductsPage = () => {
               <X size={24} className="text-gray-700" />
             </button>
             
-            <div className="p-6">
+            <div className="p-3">
               {/* 產品標題 */}
               <h2 className="text-2xl font-bold mb-6 text-center">{selectedProduct.name}</h2>
 
               {/* 大圖展示 */}
-              <div className="mb-6 overflow-hidden rounded-lg">
+              <div className="mb-3 overflow-hidden rounded-lg">
                 <img 
                   src={selectedProduct.detailImages[currentImageIndex]} 
                   alt={`${selectedProduct.name} - 主圖`} 
-                  className="w-full h-auto object-contain max-h-[500px]"
+                  className="w-full h-auto object-contain max-h-[600px]"
                 />
               </div>
 
@@ -216,7 +217,7 @@ const ProductsPage = () => {
                 <div className="grid grid-cols-1 gap-6 mb-8">                
                   {/* 產品規格 - 直接用文字方式呈現 */}
                   <div className="text-lg space-y-5 text-gray-700">
-                    <p>產地：{selectedProduct.specifications.origin}</p>
+                    {/*<p>產地：{selectedProduct.specifications.origin}</p>*/}
                     <p>尺寸：{selectedProduct.specifications.size}</p>
                     <p>厚度：{selectedProduct.specifications.thickness}</p>
                     <p>表面處理：{selectedProduct.specifications.finish}</p>
@@ -252,10 +253,9 @@ const ProductsPage = () => {
                       <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z" />
                     </svg>
                   </a>
-                  
                   {/* LINE 按鈕 */}
-                  <a 
-                    href={`line://ti/p/${lineId}`} 
+                  <a  target='_blank'
+                    href={`https://line.me/ti/p/~${lineId}`}
                     className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center hover:bg-green-600 transition-colors shadow-md"
                   >
                     <img src="/src/assets/icon/icon-line.png" alt="LINE" className="w-6 h-6 object-contain" />

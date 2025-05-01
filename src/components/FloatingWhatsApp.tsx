@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 const FloatingContactButtons = () => {
   // 聯絡資訊
   const phoneNumber = '0978-218598';
-  const lineId = 'your_line_id';
+  const lineId = 'bosen0529';
   const facebookUrl = 'https://www.facebook.com/huiyoustone/';
 
   return (
@@ -36,7 +36,7 @@ const FloatingContactButtons = () => {
       </a>
 
       {/* Line 按鈕 */}
-      <a 
+      <a target='_blank'
         href={`line://ti/p/${lineId}`} 
         className="block"
       >
