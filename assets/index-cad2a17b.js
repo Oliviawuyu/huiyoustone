@@ -5237,7 +5237,7 @@ const FloatingContactButtons = () => {
               "bg-[#06C755] text-white hover:bg-[#05b44c]"
             ),
             "aria-label": "LINE 聊天",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/icon/icon-line.png", alt: "LINE", className: "w-6 h-6 object-contain" })
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/huiyoustone/icon/icon-line.png", alt: "LINE", className: "w-6 h-6 object-contain" })
           }
         )
       }
@@ -5541,7 +5541,7 @@ const AboutPage = () => {
                 target: "_blank",
                 rel: "noopener noreferrer",
                 className: "bg-[#06C755] text-white p-2 rounded-full hover:bg-[#05b44c] transition-colors",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/icon/icon-line.png", alt: "LINE", className: "w-5 h-5" })
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/huiyoustone/icon/icon-line.png", alt: "LINE", className: "w-5 h-5" })
               }
             )
           ] })
@@ -5564,43 +5564,43 @@ const GalleryPage = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "/pic/c/c7.jpg",
+      src: "/huiyoustone/pic/c/c7.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 2,
-      src: "/pic/c/c6.jpg",
+      src: "/huiyoustone/pic/c/c6.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 3,
-      src: "/pic/c/c5.jpg",
+      src: "/huiyoustone/pic/c/c5.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 4,
-      src: "/pic/c/c4.jpg",
+      src: "/huiyoustone/pic/c/c4.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 5,
-      src: "/pic/c/c3.jpg",
+      src: "/huiyoustone/pic/c/c3.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 6,
-      src: "/pic/c/c2.jpg",
+      src: "/huiyoustone/pic/c/c2.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 7,
-      src: "/pic/c/c1.jpg",
+      src: "/huiyoustone/pic/c/c1.jpg",
       alt: "礦區實照",
       title: ""
     }
@@ -5895,7 +5895,7 @@ const ProductsPage = () => {
                         target: "_blank",
                         rel: "noopener noreferrer",
                         className: "w-8 h-8 rounded-full bg-[#06C755] flex items-center justify-center hover:bg-[#05b44c] transition-colors shadow-md",
-                        children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/icon/icon-line.png", alt: "LINE", className: "w-5 h-5 object-contain" })
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/huiyoustone/icon/icon-line.png", alt: "LINE", className: "w-5 h-5 object-contain" })
                       }
                     ),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
