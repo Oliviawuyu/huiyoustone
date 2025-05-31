@@ -5329,7 +5329,7 @@ const SectionTitle = ({
 
 const HomePage = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HeroSection, { backgroundImage: "https://pic03.eapple.com.tw/huiyoustone/abg-04.jpg", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center text-white", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HeroSection, { backgroundImage: "/pic/home/義大利灰珍珠_220524_8.jpg", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center text-white", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-4xl md:text-6xl font-bold mb-2", children: "HUIYOU" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-5xl font-bold mb-6", children: "STONE" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl mb-2", children: "天然的石材" }),
