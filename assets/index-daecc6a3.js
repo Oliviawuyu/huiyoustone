@@ -5327,11 +5327,18 @@ const SectionTitle = ({
   ] });
 };
 
-const GOOGLE_MAPS_API_KEY = "AIzaSyClBvNM03tATjAMvWAAUP_2eHRBMFzr0dY" ;
+const getApiKey = () => {
+  return window.GOOGLE_MAPS_API_KEY || "YOUR_GOOGLE_MAPS_API_KEY";
+};
 const useGoogleMaps = () => {
   const [isLoaded, setIsLoaded] = reactExports.useState(false);
   const [error, setError] = reactExports.useState(null);
   reactExports.useEffect(() => {
+    const apiKey = getApiKey();
+    if (!apiKey || apiKey === "YOUR_GOOGLE_MAPS_API_KEY") {
+      setError("請設置 Google Maps API Key");
+      return;
+    }
     if (window.google && window.google.maps) {
       setIsLoaded(true);
       return;
@@ -5348,7 +5355,7 @@ const useGoogleMaps = () => {
       return;
     }
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
     script.async = true;
     script.defer = true;
     script.onload = () => {
