@@ -25,43 +25,43 @@ const GalleryPage = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "/huiyoustone/pic/c/c7.jpg",
+      src: "/pic/c/c7.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 2,
-      src: "/huiyoustone/pic/c/c6.jpg",
+      src: "/pic/c/c6.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 3,
-      src: "/huiyoustone/pic/c/c5.jpg",
+      src: "/pic/c/c5.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 4,
-      src: "/huiyoustone/pic/c/c4.jpg",
+      src: "/pic/c/c4.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 5,
-      src: "/huiyoustone/pic/c/c3.jpg",
+      src: "/pic/c/c3.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 6,
-      src: "/huiyoustone/pic/c/c2.jpg",
+      src: "/pic/c/c2.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 7,
-      src: "/huiyoustone/pic/c/c1.jpg",
+      src: "/pic/c/c1.jpg",
       alt: "礦區實照",
       title: ""
     }

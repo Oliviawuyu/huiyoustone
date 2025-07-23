@@ -128,7 +128,7 @@ const AboutPage = () => {
                           rel="noopener noreferrer"
                           className="bg-[#06C755] text-white p-2 rounded-full hover:bg-[#05b44c] transition-colors"
                       >
-                        <img src="/huiyoustone/icon/icon-line.png" alt="LINE" className="w-5 h-5" />
+                        <img src="/icon/icon-line.png" alt="LINE" className="w-5 h-5" />
                       </a>
                     </div>
                   </div>

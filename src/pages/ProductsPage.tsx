@@ -15,42 +15,30 @@ const ProductsPage = () => {
   const products = [
     {
       id: 1,
-      name: "比利時木紋",
-      image: "/huiyoustone/pic/product/p1/A01-01.jpg",
-      description: "高級木紋石材，紋理自然優美，適合用於高檔室內裝潢。",
-      detailImages: [
-        "/huiyoustone/pic/product/p1/A01-01.jpg",
-        "/huiyoustone/pic/product/p1/A01-02.jpg",
-        "/huiyoustone/pic/product/p1/A01-03.jpg",
-        "/huiyoustone/pic/product/p1/A01-04.jpg",
-        "/huiyoustone/pic/product/p1/A01-05.jpg"
-      ],
-      specifications: {
-        origin: "",
-        size: "標準板材尺寸：240 x 120 公分",
-        thickness: "可選厚度：2cm、3cm",
-        finish: "拋光、平光、仿古",
-        application: "地板、牆面、檯面等"
-      }
+      name: "義大利灰珍珠",
+      description: "高級大理石，質地細緻，色澤優雅",
+      image: "/pic/product/p1/A01-01.jpg",
+      category: "大理石",
+      images: [
+        "/pic/product/p1/A01-01.jpg",
+        "/pic/product/p1/A01-02.jpg",
+        "/pic/product/p1/A01-03.jpg",
+        "/pic/product/p1/A01-04.jpg",
+        "/pic/product/p1/A01-05.jpg"
+      ]
     },
     {
       id: 2,
-      name: "白海棠(蘇非亞)",
+      name: "義大利白大理石",
+      description: "純白大理石，質地細緻，適合各種裝潢風格",
       image: "https://pic03.eapple.com.tw/huiyoustone/about-06.jpg",
-      description: "源自義大利的高級白色大理石，帶有典雅的灰色紋路，是豪宅和高級商業空間的首選。",
-      detailImages: [
+      category: "大理石",
+      images: [
         "https://pic03.eapple.com.tw/huiyoustone/about-06.jpg",
         "https://pic03.eapple.com.tw/huiyoustone/about-07.jpg",
         "https://pic03.eapple.com.tw/huiyoustone/about-08.jpg",
         "https://pic03.eapple.com.tw/huiyoustone/about-010.jpg"
-      ],
-      specifications: {
-        origin: "義大利",
-        size: "標準板材尺寸：240 x 120 公分",
-        thickness: "可選厚度：1.5cm、2cm、3cm",
-        finish: "拋光、磨砂、亞光",
-        application: "地板、牆面、檯面等"
-      }
+      ]
     },
     // 其他產品...
   ];
@@ -263,7 +251,7 @@ const ProductsPage = () => {
                           rel="noopener noreferrer"
                           className="w-8 h-8 rounded-full bg-[#06C755] flex items-center justify-center hover:bg-[#05b44c] transition-colors shadow-md"
                       >
-                        <img src="/huiyoustone/icon/icon-line.png" alt="LINE" className="w-5 h-5 object-contain" />
+                        <img src="/icon/icon-line.png" alt="LINE" className="w-5 h-5 object-contain" />
                       </a>
 
                       {/* 電話按鈕 */}
