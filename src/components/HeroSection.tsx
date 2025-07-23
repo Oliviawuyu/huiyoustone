@@ -6,7 +6,7 @@ interface HeroSectionProps {
   overlay?: boolean;
   height?: string;
   backgroundSize?: 'cover' | 'contain';
-  overlayOpacity?: 'light' | 'medium' | 'dark';
+  overlayOpacity?: 'light0'|'light' | 'medium' | 'dark';
 }
 
 const HeroSection = ({ 
@@ -21,6 +21,7 @@ const HeroSection = ({
   
   // 遮罩透明度設定
   const overlayClasses = {
+    light0: '',
     light: 'bg-gradient-to-b from-black/20 via-black/30 to-black/40',
     medium: 'bg-gradient-to-b from-black/30 via-black/40 to-black/50',
     dark: 'bg-gradient-to-b from-black/40 via-black/50 to-black/60'
