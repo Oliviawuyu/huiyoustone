@@ -5297,7 +5297,7 @@ const HeroSection = ({
       className: `relative ${height} bg-cover bg-center flex items-center justify-center`,
       style: { backgroundImage: `url(${backgroundImage})` },
       children: [
-        overlay && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-black/30" }),
+        overlay && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 " }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 container mx-auto px-4", children })
       ]
     }
@@ -5327,24 +5327,157 @@ const SectionTitle = ({
   ] });
 };
 
+const GOOGLE_MAPS_API_KEY = "AIzaSyCW8Sr6P91TyRo4QtcTirir0ZUIXIIVZPI" ;
+const useGoogleMaps = () => {
+  const [isLoaded, setIsLoaded] = reactExports.useState(false);
+  const [error, setError] = reactExports.useState(null);
+  reactExports.useEffect(() => {
+    if (window.google && window.google.maps) {
+      setIsLoaded(true);
+      return;
+    }
+    if (document.querySelector('script[src*="maps.googleapis.com"]')) {
+      const checkLoaded = () => {
+        if (window.google && window.google.maps) {
+          setIsLoaded(true);
+        } else {
+          setTimeout(checkLoaded, 100);
+        }
+      };
+      checkLoaded();
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`;
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      setIsLoaded(true);
+    };
+    script.onerror = () => {
+      setError("無法載入 Google Maps API");
+    };
+    document.head.appendChild(script);
+    return () => {
+      const existingScript = document.querySelector('script[src*="maps.googleapis.com"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
+  }, []);
+  return { isLoaded, error };
+};
+
+const StaticMap = ({
+  address,
+  className = "w-full h-80"
+}) => {
+  const googleMapsUrl = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "iframe",
+    {
+      src: googleMapsUrl,
+      width: "100%",
+      height: "100%",
+      style: { border: 0 },
+      allowFullScreen: true,
+      loading: "lazy",
+      referrerPolicy: "no-referrer-when-downgrade",
+      className: "rounded-lg shadow-lg"
+    }
+  ) });
+};
+
+const GoogleMap = ({
+  address = "花蓮縣花蓮市美工六街20之6號",
+  latitude = 23.9871,
+  longitude = 121.6014,
+  zoom = 15,
+  className = "w-full h-96"
+}) => {
+  const mapRef = reactExports.useRef(null);
+  const mapInstanceRef = reactExports.useRef(null);
+  const { isLoaded, error } = useGoogleMaps();
+  reactExports.useEffect(() => {
+    if (!isLoaded || !mapRef.current || mapInstanceRef.current) {
+      return;
+    }
+    const mapOptions = {
+      center: { lat: latitude, lng: longitude },
+      zoom,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [
+        {
+          featureType: "poi",
+          elementType: "labels",
+          stylers: [{ visibility: "off" }]
+        }
+      ]
+    };
+    const map = new google.maps.Map(mapRef.current, mapOptions);
+    const marker = new google.maps.Marker({
+      position: { lat: latitude, lng: longitude },
+      map,
+      title: address,
+      animation: google.maps.Animation.DROP
+    });
+    const infoWindow = new google.maps.InfoWindow({
+      content: `
+        <div style="padding: 10px;">
+          <h3 style="margin: 0 0 5px 0; font-weight: bold;">蕙佑石材</h3>
+          <p style="margin: 0; color: #666;">${address}</p>
+        </div>
+      `
+    });
+    marker.addListener("click", () => {
+      infoWindow.open(map, marker);
+    });
+    mapInstanceRef.current = map;
+  }, [isLoaded, address, latitude, longitude, zoom]);
+  if (error && error.includes("請設置 Google Maps API Key")) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(StaticMap, { address, className });
+  }
+  if (error) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${className} flex items-center justify-center bg-gray-100 rounded-lg`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-red-500 text-center", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "地圖載入失敗" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm", children: error }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs mt-2", children: "使用靜態地圖作為備用" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(StaticMap, { address, className: "mt-4" })
+    ] }) });
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${className} relative`, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        ref: mapRef,
+        className: "w-full h-full rounded-lg shadow-lg",
+        style: { minHeight: "300px" }
+      }
+    ),
+    !isLoaded && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-gray-500", children: "載入地圖中..." }) })
+  ] });
+};
+
 const HomePage = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HeroSection, { backgroundImage: "/pic/home/義大利灰珍珠_220524_8.jpg", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center text-white", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-4xl md:text-6xl font-bold mb-2", children: "HUIYOU" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-5xl font-bold mb-6", children: "STONE" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl mb-2", children: "天然的石材" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HeroSection, { backgroundImage: "/pic/home/義大利灰珍珠_220524_8.jpg", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center text-white md:mt-[280px] mt-[225px]", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-4xl md:text-5xl font-bold mb-2", style: { textShadow: "4px 4px 7px rgba(0,0,0,0.6)" }, children: "HUIYOU" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-bold mb-6", style: { textShadow: "4px 4px 7px rgba(0,0,0,0.6)" }, children: "STONE" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl md:text-3xl mb-2 font-bold", style: { textShadow: "1px 1px 3px rgba(0,0,0,0.5)" }, children: "天然的石材" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-center items-center", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-0.5 bg-white" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mx-2 text-lg", children: "造就完美的居家生活" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-0.5 bg-white" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-10 h-0.5 bg-white" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mx-2 text-base md:text-2xl font-bold", style: { textShadow: "1px 1px 3px rgba(0,0,0,0.5)" }, children: "造就完美的居家生活" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-10 h-0.5 bg-white" })
       ] })
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-16 bg-gray-50", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "container mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8 items-center", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(SectionTitle, { chineseTitle: "關於我們", englishTitle: "About" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-4", children: "2008" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-6", children: "蕙佑石材經營團隊於2008年成立，專營各種石材批售。秉持著服務至上的理念，並配合流行趨勢及建築設計業者之需求。" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-gray-500", children: "Start a new life & get a pretty style in front of the city" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-6", children: "蕙 佑 ⽯ 材 經 營 團 隊 於 2 0 0 8 年 成 ⽴ ， 專 營 各 種 ⽯ 材 批 售 。 秉 持 著 服 務 至 上 的 理 念 ， 並 配 合 流 ⾏ 趨 勢 及 建 築 設 計 業 者 之 需 求 。" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-6", children: "近 年 從 國 外 進 ⼜ 多 樣 化 ⽯ 材 ， 質 地 堅 固 ， 紋 理 景 緻 多 樣 ， 展 現 ⼤ ⾃ 然 鬼 斧 神 ⼯ 之 驚 奇 ， 並 獲 五 星 級 連 鎖 觀 光 飯 店 及 北 部 豪 宅 建 案 採 購 運 ⽤ ， 相 得 益 彰 迭 獲 好 評 。" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-500 mb-6", children: "Huiyou Stone Materials management team was established in 2008, specializing in the wholesale of various stone materials. We uphold the principle of service excellence while adapting to current trends and meeting the needs of architectural design professionals." }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-500 mb-6", children: "In recent years, we have imported diversified stone materials from overseas, featuring solid textures and varied patterns that showcase nature's extraordinary craftsmanship. These materials have been purchased and utilized by five-star chain resort hotels and luxury residential developments in northern Taiwan, creating complementary effects and receiving widespread acclaim." })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         "img",
@@ -5359,6 +5492,10 @@ const HomePage = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 opacity-10 text-gray-200 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[20rem] font-bold tracking-wider", children: "HUIYOU" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "container mx-auto px-4 relative z-10", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(SectionTitle, { chineseTitle: "多樣化的石材設計", englishTitle: "Design" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-6", children: "現今為了推廣石材文化，讓更多人可用平實的價格選購石材產品，做為美化居家裝潢的建材，如：電視牆、檯面、地板、樓梯等。提供多樣化的石材設計，讓追求不凡品味的人士擁有專屬的風格選擇。" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-6", children: "經由建築工程設計讓空間的美學活現，且具備「普及性及共享化」提升居家質感多次贏得工程設計公司和建設公司的採用，將居住者所期待、嚮往的生活型態，配合設計巧妙融合，提供最貼近人心的空間規劃設計。" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-500 mb-6", children: "Today, in order to promote stone material culture, we enable more people to purchase stone products at affordable prices as building materials to beautify home decoration, such as TV walls, countertops, flooring, stairs, and more. We provide diversified stone designs, allowing people who pursue extraordinary taste to have their own exclusive style choices." }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-500 mb-6", children: 'Through architectural and engineering design, we bring spatial aesthetics to life, featuring "accessibility and shareability" that enhances home quality. We have repeatedly won adoption by engineering design companies and construction companies, integrating the lifestyle that residents expect and aspire to with clever design fusion, providing the most heartfelt spatial planning and design.' }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-4 gap-4 mt-8", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "img",
@@ -5424,11 +5561,13 @@ const HomePage = () => {
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "花蓮縣花蓮市美工六街20之6號" })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "img",
+            GoogleMap,
             {
-              src: "https://pic03.eapple.com.tw/huiyoustone/map.jpg",
-              alt: "地圖",
-              className: "w-full h-auto border border-gray-300"
+              address: "花蓮縣花蓮市美工六街20之6號",
+              latitude: 23.9871,
+              longitude: 121.6014,
+              zoom: 15,
+              className: "w-full h-80"
             }
           ) })
         ] }),
