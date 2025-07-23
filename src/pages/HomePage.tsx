@@ -1,20 +1,21 @@
 import HeroSection from '../components/HeroSection';
 import SectionTitle from '../components/SectionTitle';
+import GoogleMap from '../components/GoogleMap';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <HeroSection backgroundImage="https://pic03.eapple.com.tw/huiyoustone/abg-04.jpg">
-        <div className="text-center text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-2">HUIYOU</h1>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">STONE</h2>
-          <p className="text-xl mb-2">天然的石材</p>
+      <HeroSection backgroundImage="/pic/home/義大利灰珍珠_220524_8.jpg">
+        <div className="text-center text-white md:mt-[280px] mt-[225px]">
+          <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{textShadow: '4px 4px 7px rgba(0,0,0,0.6)'}}>HUIYOU</h1>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{textShadow: '4px 4px 7px rgba(0,0,0,0.6)'}}>STONE</h2>
+          <p className="text-xl md:text-3xl mb-2 font-bold" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>天然的石材</p>
           <div className="flex justify-center items-center">
-            <div className="w-12 h-0.5 bg-white"></div>
-            <p className="mx-2 text-lg">造就完美的居家生活</p>
-            <div className="w-12 h-0.5 bg-white"></div>
+            <div className="w-10 h-0.5 bg-white"></div>
+            <p className="mx-2 text-base md:text-2xl font-bold" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>造就完美的居家生活</p>
+            <div className="w-10 h-0.5 bg-white"></div>
           </div>
         </div>
       </HeroSection>
@@ -27,9 +28,16 @@ const HomePage = () => {
               <SectionTitle chineseTitle="關於我們" englishTitle="About" />
               <p className="text-gray-700 mb-4">2008</p>
               <p className="text-gray-700 mb-6">
-                蕙佑石材經營團隊於2008年成立，專營各種石材批售。秉持著服務至上的理念，並配合流行趨勢及建築設計業者之需求。
-              </p>
-              <p className="text-sm text-gray-500">Start a new life & get a pretty style in front of the city</p>
+              蕙 佑 ⽯ 材 經 營 團 隊 於 2 0 0 8 年 成 ⽴ ， 專 營 各 種 ⽯ 材 批 售 。 秉 持 著
+服 務 至 上 的 理 念 ， 並 配 合 流 ⾏ 趨 勢 及 建 築 設 計 業 者 之 需 求 。</p>
+        <p className="text-gray-700 mb-6">
+近 年 從 國 外 進 ⼜ 多 樣 化 ⽯ 材 ， 質 地 堅 固 ， 紋 理 景 緻 多 樣 ， 展 現
+⼤ ⾃ 然 鬼 斧 神 ⼯ 之 驚 奇 ， 並 獲 五 星 級 連 鎖 觀 光 飯 店 及 北 部 豪 宅
+建 案 採 購 運 ⽤ ， 相 得 益 彰 迭 獲 好 評 。
+                </p>
+              <p className="text-gray-500 mb-6">Huiyou Stone Materials management team was established in 2008, specializing in the wholesale of various stone materials. We uphold the principle of service excellence while adapting to current trends and meeting the needs of architectural design professionals.</p>
+              <p className="text-gray-500 mb-6">In recent years, we have imported diversified stone materials from overseas, featuring solid textures and varied patterns that showcase nature's extraordinary craftsmanship. These materials have been purchased and utilized by five-star chain resort hotels and luxury residential developments in northern Taiwan, creating complementary effects and receiving widespread acclaim.</p>
+    
             </div>
             <div>
               <img 
@@ -49,7 +57,10 @@ const HomePage = () => {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <SectionTitle chineseTitle="多樣化的石材設計" englishTitle="Design" />
-          
+          <p className="text-gray-700 mb-6">現今為了推廣石材文化，讓更多人可用平實的價格選購石材產品，做為美化居家裝潢的建材，如：電視牆、檯面、地板、樓梯等。提供多樣化的石材設計，讓追求不凡品味的人士擁有專屬的風格選擇。</p>
+          <p className="text-gray-700 mb-6">經由建築工程設計讓空間的美學活現，且具備「普及性及共享化」提升居家質感多次贏得工程設計公司和建設公司的採用，將居住者所期待、嚮往的生活型態，配合設計巧妙融合，提供最貼近人心的空間規劃設計。</p>
+          <p className="text-gray-500 mb-6">Today, in order to promote stone material culture, we enable more people to purchase stone products at affordable prices as building materials to beautify home decoration, such as TV walls, countertops, flooring, stairs, and more. We provide diversified stone designs, allowing people who pursue extraordinary taste to have their own exclusive style choices.</p>
+          <p className="text-gray-500 mb-6">Through architectural and engineering design, we bring spatial aesthetics to life, featuring "accessibility and shareability" that enhances home quality. We have repeatedly won adoption by engineering design companies and construction companies, integrating the lifestyle that residents expect and aspire to with clever design fusion, providing the most heartfelt spatial planning and design.</p>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-8">
             <img 
               src="https://pic03.eapple.com.tw/huiyoustone/about-05.jpg" 
@@ -113,10 +124,12 @@ const HomePage = () => {
               </div>
               
               <div className="mt-6">
-                <img 
-                  src="https://pic03.eapple.com.tw/huiyoustone/map.jpg" 
-                  alt="地圖" 
-                  className="w-full h-auto border border-gray-300"
+                <GoogleMap 
+                  address="花蓮縣花蓮市美工六街20之6號"
+                  latitude={23.9871}
+                  longitude={121.6014}
+                  zoom={15}
+                  className="w-full h-80"
                 />
               </div>
             </div>
