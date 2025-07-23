@@ -31,6 +31,10 @@ const Footer = () => {
                 <Mail size={16} className="mr-2" />
                 <span>huiyoustone@gmail.com</span>
               </div>
+              <div className="flex items-center">
+                <Mail size={16} className="mr-2" />
+                <span>jinestone1118@gmail.com</span>
+              </div>
               <div className="flex items-start">
                 <MapPin size={16} className="mr-2 mt-1" />
                 <span>花蓮縣花蓮市美工六街20之6號</span>

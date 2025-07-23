@@ -50,6 +50,12 @@ const FloatingContact = () => {
               huiyoustone@gmail.com
             </a>
           </div>
+          <div className="flex items-center">
+            <Mail size={16} className="mr-2 text-amber-700" />
+            <a href="mailto:jinestone1118@gmail.com" className="text-gray-700 hover:text-amber-700 transition-colors">
+            jinestone1118@gmail.com
+            </a>
+          </div>
         </div>
         
         <div className="mt-6 pt-4 border-t border-gray-200">

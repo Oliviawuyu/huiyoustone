@@ -38,8 +38,9 @@ const ContactPage = () => {
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-700">
                   <h3 className="text-lg font-bold mb-3 text-amber-700">Email</h3>
                   <p className="text-gray-700">huiyoustone@gmail.com</p>
+                  <br />
+                  <p className="text-gray-700">jinestone1118@gmail.com</p>
                 </div>
-                
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-700">
                   <h3 className="text-lg font-bold mb-3 text-amber-700">地址</h3>
                   <p className="text-gray-700">花蓮縣花蓮市美工六街20之6號</p>
