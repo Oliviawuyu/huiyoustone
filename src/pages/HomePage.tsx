@@ -10,15 +10,16 @@ const HomePage = () => {
       <HeroSection 
         backgroundImage="/pic/home/義大利灰珍珠_220524_8.jpg"
         overlayOpacity="light"
+        height="h-screen"
       >
-        <div className="text-center text-white md:mt-[280px] mt-[225px]">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2 tracking-widest" style={{textShadow: '4px 4px 7px rgba(0,0,0,0.6)'}}>HUIYOU</h1>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-widest" style={{textShadow: '4px 4px 7px rgba(0,0,0,0.6)'}}>STONE</h2>
-          <p className="text-xl md:text-3xl mb-2 font-bold" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>天然的石材</p>
+        <div className="text-center text-white md:mt-[280px] mt-[150px]">
+          <h1 className="text-3xl md:text-5xl font-bold mb-2 tracking-widest" style={{textShadow: '4px 4px 7px rgba(0,0,0,0.6)'}}>HUIYOU</h1>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-widest" style={{textShadow: '4px 4px 7px rgba(0,0,0,0.6)'}}>STONE</h2>
+          <p className="text-lg md:text-3xl mb-2 font-bold" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>天然的石材</p>
           <div className="flex justify-center items-center">
-            <div className="w-10 h-0.5 bg-white"></div>
-            <p className="mx-2 text-base md:text-2xl font-bold" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>造就完美的居家生活</p>
-            <div className="w-10 h-0.5 bg-white"></div>
+            <div className="w-8 md:w-10 h-0.5 bg-white"></div>
+            <p className="mx-2 text-sm md:text-2xl font-bold" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>造就完美的居家生活</p>
+            <div className="w-8 md:w-10 h-0.5 bg-white"></div>
           </div>
         </div>
       </HeroSection>
