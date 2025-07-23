@@ -3,8 +3,8 @@ import { cn } from '@/lib/utils';
 
 const FloatingContactButtons = () => {
     // 聯絡資訊
-    const phoneNumber = '0978-218598';
-    const lineId = 'bosen0529';
+    const phoneNumber = '0978-218-598';
+    const lineId = 'jine1118';
     const facebookUrl = 'https://www.facebook.com/huiyoustone/';
 
     return (

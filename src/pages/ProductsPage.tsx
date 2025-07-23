@@ -85,8 +85,8 @@ const ProductsPage = () => {
   };
 
   // 聯絡資訊
-  const phoneNumber = '0978-218598';
-  const lineId = 'bosen0529';
+  const phoneNumber = '0918-140700';
+  const lineId = 'jine1118';
   const facebookUrl = 'https://www.facebook.com/huiyoustone/';
 
   return (

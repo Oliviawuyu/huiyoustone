@@ -31,7 +31,7 @@ const ContactPage = () => {
                   <div className="space-y-1">
                     <p className="text-gray-700">03-8235309</p>
                     <p className="text-gray-700">03-8246298</p>
-                    <p className="text-gray-700">0978-218598</p>
+                    <p className="text-gray-700">0918-140700</p>
                   </div>
                 </div>
                 

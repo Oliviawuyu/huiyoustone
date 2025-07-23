@@ -64,12 +64,12 @@ const AboutPage = () => {
                     <h3 className="text-xl font-bold mb-4">聯絡資訊</h3>
                     <ul className="space-y-3 text-gray-700">
                       <li className="flex items-start">
-                        <span className="font-semibold mr-2">電話：</span>
-                        <a href="tel:0978-218598" className="hover:text-blue-600">0978-218598</a>
+                          <span className="font-semibold mr-2">電話：</span>
+                          <a href="tel:0918-140700" className="hover:text-blue-600">0918-140700</a>
                       </li>
                       <li className="flex items-start">
                         <span className="font-semibold mr-2">LINE：</span>
-                        <span>bosen0529</span>
+                        <span>jine1118</span>
                       </li>
                     </ul>
                   </div>
@@ -91,7 +91,7 @@ const AboutPage = () => {
                         </svg>
                       </a>
                       <a
-                          href="line://ti/p/bosen0529"
+                          href="line://ti/p/jine1118"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-[#06C755] text-white p-2 rounded-full hover:bg-[#05b44c] transition-colors"

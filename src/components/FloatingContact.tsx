@@ -39,8 +39,8 @@ const FloatingContact = () => {
           
           <div className="flex items-center">
             <Phone size={16} className="mr-2 text-amber-700" />
-            <a href="tel:0978-218598" className="text-gray-700 hover:text-amber-700 transition-colors">
-              0978-218598
+            <a href="tel:0918-140700" className="text-gray-700 hover:text-amber-700 transition-colors">
+            0918-140700
             </a>
           </div>
           
