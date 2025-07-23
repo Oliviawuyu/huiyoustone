@@ -19,13 +19,20 @@ const ProductsPage = () => {
       description: "高級大理石，質地細緻，色澤優雅",
       image: "/pic/product/p1/A01-01.jpg",
       category: "大理石",
-      images: [
+      detailImages: [
         "/pic/product/p1/A01-01.jpg",
         "/pic/product/p1/A01-02.jpg",
         "/pic/product/p1/A01-03.jpg",
         "/pic/product/p1/A01-04.jpg",
         "/pic/product/p1/A01-05.jpg"
-      ]
+      ],
+      specifications: {
+        origin: "義大利",
+        size: "300x600mm",
+        thickness: "12mm",
+        finish: "拋光面",
+        application: "室內地板、牆面、檯面"
+      }
     },
     {
       id: 2,
@@ -33,12 +40,19 @@ const ProductsPage = () => {
       description: "純白大理石，質地細緻，適合各種裝潢風格",
       image: "https://pic03.eapple.com.tw/huiyoustone/about-06.jpg",
       category: "大理石",
-      images: [
+      detailImages: [
         "https://pic03.eapple.com.tw/huiyoustone/about-06.jpg",
         "https://pic03.eapple.com.tw/huiyoustone/about-07.jpg",
         "https://pic03.eapple.com.tw/huiyoustone/about-08.jpg",
         "https://pic03.eapple.com.tw/huiyoustone/about-010.jpg"
-      ]
+      ],
+      specifications: {
+        origin: "義大利",
+        size: "400x800mm",
+        thickness: "15mm",
+        finish: "霧面",
+        application: "室內牆面、地板裝飾"
+      }
     },
     // 其他產品...
   ];
@@ -78,11 +92,16 @@ const ProductsPage = () => {
   return (
       <div>
         <HeroSection
-            backgroundImage="https://pic03.eapple.com.tw/huiyoustone/abg-04.jpg"
+            backgroundImage="/pic/share/abg-02.png"
             height="h-[40vh]"
+            backgroundSize="contain"
+            overlayOpacity="light"
         >
           <div className="text-center text-white">
-            <h1 className="text-4xl font-bold mb-4">嚴選石材</h1>
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">嚴選石材</h1>
+              <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg">Products</p>
+            </div>
           </div>
         </HeroSection>
 

@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="inline-block mb-4">
               <img 
-                src="https://www.mit-machining.com/store_image/huiyoustone/L165388099727.png" 
+                src="/logo1.png" 
                 alt="蕙佑石材-石材公司,花蓮石材公司" 
                 className="h-16 w-auto"
               />

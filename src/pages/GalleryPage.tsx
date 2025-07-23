@@ -70,11 +70,16 @@ const GalleryPage = () => {
   return (
       <div>
         <HeroSection
-            backgroundImage="https://pic03.eapple.com.tw/huiyoustone/abg-02.png"
+            backgroundImage="/pic/share/abg-02.png"
             height="h-[40vh]"
+            backgroundSize="contain"
+            overlayOpacity="light"
         >
           <div className="text-center text-white">
-            <h1 className="text-4xl font-bold mb-4">礦區實照</h1>
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">礦區實照</h1>
+              <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg">Gallery</p>
+            </div>
           </div>
         </HeroSection>
 
@@ -102,24 +107,15 @@ const GalleryPage = () => {
           </div>
         </section>
 
-        <section className="py-16 bg-gray-50">
+        {/* <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <SectionTitle chineseTitle="礦區介紹" englishTitle="Our Quarry" />
 
             <div className="max-w-3xl mx-auto prose prose-lg">
-              <p>
-                我們的礦區位於精心挑選的地質區域，擁有豐富優質的石材資源。這些礦區經過嚴格的環境評估和規劃，
-                確保我們能以可持續和負責任的方式開採石材。我們使用先進的採礦技術，不僅提高效率，
-                還能最大程度地減少對環境的影響。
-              </p>
-              <p>
-                每個礦區都由經驗豐富的專業團隊管理，他們確保採礦過程符合最高的安全和質量標準。
-                從礦區開採的石材經過嚴格的品質檢驗，只有符合我們高標準的石材才會被送往加工廠，
-                進行進一步的切割、打磨和加工，最終成為您看到的優質成品。
-              </p>
+            
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* 燈箱 - 大圖查看器 */}
         {selectedImage && (

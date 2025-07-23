@@ -5,63 +5,60 @@ const CasesPage = () => {
   // Sample case studies
   const cases = [
     {
-      id: 1,
-      title: "豪宅大理石地板",
-      image: "https://pic03.eapple.com.tw/huiyoustone/about-05.jpg",
-      description: "為台北市豪宅提供高品質大理石地板，打造奢華舒適的居住環境。",
-      location: "台北市",
-      year: "2022"
-    },
-    {
       id: 2,
       title: "商業空間石材牆面",
-      image: "https://pic03.eapple.com.tw/huiyoustone/about-06.jpg",
+      image: "/pic/home/LINE_ALBUM_義大利灰珍珠_220524_5.jpg",
       description: "為高級商業空間設計並安裝石材牆面，提升空間質感和品味。",
-      location: "台中市",
-      year: "2021"
+      location: "",
+      year: ""
     },
     {
       id: 3,
       title: "飯店大廳地板",
-      image: "https://pic03.eapple.com.tw/huiyoustone/about-07.jpg",
+      image: "/pic/home/義大利灰珍珠_220524_10.jpg",
       description: "為五星級飯店大廳提供精美的大理石地板，展現高貴典雅的氛圍。",
-      location: "花蓮市",
+      location: "",
       year: "2020"
     },
     {
       id: 4,
       title: "住宅廚房檯面",
-      image: "https://pic03.eapple.com.tw/huiyoustone/about-08.jpg",
+      image: "/pic/case/雕刻綠704.jpg",
       description: "為住宅廚房提供耐用美觀的石英石檯面，兼具實用性和美觀性。",
-      location: "高雄市",
-      year: "2022"
+      location: "",
+      year: ""
     },
     {
       id: 5,
       title: "辦公室接待區",
-      image: "https://pic03.eapple.com.tw/huiyoustone/about-010.jpg",
+      image: "/pic/home/義大利灰珍珠_220524_0 (1).jpg",
       description: "為企業辦公室接待區設計並安裝石材地板和牆面，展現企業形象。",
-      location: "新北市",
-      year: "2021"
+      location: "",
+      year: ""
     },
     {
       id: 6,
       title: "別墅浴室",
-      image: "https://www.mit-machining.com/store_image/huiyoustone/B2165396665433.jpg",
+      image: "/pic/case/義大利灰珍珠1.jpg",
       description: "為豪華別墅浴室提供全套石材解決方案，包括地板、牆面和洗手台。",
-      location: "宜蘭縣",
-      year: "2020"
+      location: "",
+      year: ""
     }
   ];
 
   return (
     <div>
       <HeroSection 
-        backgroundImage="https://pic03.eapple.com.tw/huiyoustone/about-03.png"
+        backgroundImage="/pic/share/abg-02.png"
         height="h-[40vh]"
+        backgroundSize="contain"
+        overlayOpacity="light"
       >
         <div className="text-center text-white">
-          <h1 className="text-4xl font-bold mb-4">案例分享</h1>
+          <div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">案例分享</h1>
+            <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg">Case Studies</p>
+          </div>
         </div>
       </HeroSection>
 
@@ -83,7 +80,7 @@ const CasesPage = () => {
                     <span className="text-sm text-gray-500">{caseItem.year}</span>
                   </div>
                   <p className="text-gray-700 mb-4">{caseItem.description}</p>
-                  <p className="text-sm text-gray-500">地點: {caseItem.location}</p>
+                  {/* <p className="text-sm text-gray-500">地點: {caseItem.location}</p> */}
                 </div>
               </div>
             ))}

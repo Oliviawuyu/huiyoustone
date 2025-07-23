@@ -7,10 +7,13 @@ const HomePage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <HeroSection backgroundImage="/pic/home/義大利灰珍珠_220524_8.jpg">
+      <HeroSection 
+        backgroundImage="/pic/home/義大利灰珍珠_220524_8.jpg"
+        overlayOpacity="light"
+      >
         <div className="text-center text-white md:mt-[280px] mt-[225px]">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{textShadow: '4px 4px 7px rgba(0,0,0,0.6)'}}>HUIYOU</h1>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{textShadow: '4px 4px 7px rgba(0,0,0,0.6)'}}>STONE</h2>
+          <h1 className="text-4xl md:text-5xl font-bold mb-2 tracking-widest" style={{textShadow: '4px 4px 7px rgba(0,0,0,0.6)'}}>HUIYOU</h1>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-widest" style={{textShadow: '4px 4px 7px rgba(0,0,0,0.6)'}}>STONE</h2>
           <p className="text-xl md:text-3xl mb-2 font-bold" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>天然的石材</p>
           <div className="flex justify-center items-center">
             <div className="w-10 h-0.5 bg-white"></div>
@@ -40,7 +43,7 @@ const HomePage = () => {
             </div>
             <div>
               <img 
-                src="https://pic03.eapple.com.tw/huiyoustone/about-01.jpg" 
+                src="/pic/home/LINE_ALBUM_義大利灰珍珠_220524_5.jpg" 
                 alt="蕙佑石材" 
                 className="w-full h-auto rounded-md shadow-lg"
               />
@@ -60,50 +63,23 @@ const HomePage = () => {
           <p className="text-gray-700 mb-6">經由建築工程設計讓空間的美學活現，且具備「普及性及共享化」提升居家質感多次贏得工程設計公司和建設公司的採用，將居住者所期待、嚮往的生活型態，配合設計巧妙融合，提供最貼近人心的空間規劃設計。</p>
           <p className="text-gray-500 mb-6">Today, in order to promote stone material culture, we enable more people to purchase stone products at affordable prices as building materials to beautify home decoration, such as TV walls, countertops, flooring, stairs, and more. We provide diversified stone designs, allowing people who pursue extraordinary taste to have their own exclusive style choices.</p>
           <p className="text-gray-500 mb-6">Through architectural and engineering design, we bring spatial aesthetics to life, featuring "accessibility and shareability" that enhances home quality. We have repeatedly won adoption by engineering design companies and construction companies, integrating the lifestyle that residents expect and aspire to with clever design fusion, providing the most heartfelt spatial planning and design.</p>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-8">
-            <img 
-              src="https://pic03.eapple.com.tw/huiyoustone/about-05.jpg" 
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mt-8">
+          <img 
+              src="/pic/home/義大利灰珍珠_220524_8.jpg" 
               alt="石材設計" 
-              className="w-full h-auto"
+              className="w-full w-auto"
             />
             <img 
-              src="https://pic03.eapple.com.tw/huiyoustone/about-06.jpg" 
+              src="/pic/home/義大利灰珍珠_220524_10.jpg" 
               alt="石材設計" 
-              className="w-full h-auto"
+              className="w-full w-auto"
             />
             <img 
-              src="https://pic03.eapple.com.tw/huiyoustone/about-07.jpg" 
+              src="/pic/home/義大利灰珍珠_220524_0 (1).jpg" 
               alt="石材設計" 
-              className="w-full h-auto"
+              className="w-full w-auto"
             />
-            <img 
-              src="https://pic03.eapple.com.tw/huiyoustone/about-08.jpg" 
-              alt="石材設計" 
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Residence Section */}
-      <section 
-        className="py-16 bg-cover bg-center"
-        style={{ backgroundImage: `url(https://pic03.eapple.com.tw/huiyoustone/about-09.png)` }}
-      >
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/2">
-              <img 
-                src="https://pic03.eapple.com.tw/huiyoustone/about-010.jpg" 
-                alt="石材設計" 
-                className="w-full h-auto rounded-md shadow-lg"
-              />
-            </div>
-            <div className="md:w-1/2 flex items-end">
-              <div className="bg-amber-700 text-white px-6 py-3 inline-block">
-                WE HAVE A COMFORTABLE NEW RESIDENCE
-              </div>
-            </div>
+      
           </div>
         </div>
       </section>
@@ -121,25 +97,16 @@ const HomePage = () => {
                 <p>Email: huiyoustone@gmail.com</p>
                 <p>花蓮縣花蓮市美工六街20之6號</p>
               </div>
-              
-              <div className="mt-6">
-                <GoogleMap 
-                  address="花蓮縣花蓮市美工六街20之6號"
-                  latitude={23.9871}
-                  longitude={121.6014}
-                  zoom={15}
-                  className="w-full h-80"
-                />
-              </div>
             </div>
             
             <div>
-              <img 
-                src="https://www.mit-machining.com/store_image/huiyoustone/B2165396665433.jpg" 
-                alt="石材設計" 
-                className="w-full h-auto rounded-md"
+              <GoogleMap 
+                address="花蓮縣花蓮市美工六街20之6號"
+                latitude={23.9871}
+                longitude={121.6014}
+                zoom={15}
+                className="w-full h-80"
               />
-              <p className="text-center mt-4 text-amber-700">LIFE IS ALL ABOUT HAVING A GOOD TIME</p>
             </div>
           </div>
         </div>
