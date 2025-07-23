@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <HeroSection backgroundImage="/pic/home/義大利灰珍珠_220524_8.jpg">
+      <HeroSection backgroundImage="/huiyoustone/pic/home/義大利灰珍珠_220524_8.jpg">
         <div className="text-center text-white md:mt-[280px] mt-[225px]">
           <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{textShadow: '4px 4px 7px rgba(0,0,0,0.6)'}}>HUIYOU</h1>
           <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{textShadow: '4px 4px 7px rgba(0,0,0,0.6)'}}>STONE</h2>
@@ -26,7 +26,6 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <SectionTitle chineseTitle="關於我們" englishTitle="About" />
-              <p className="text-gray-700 mb-4">2008</p>
               <p className="text-gray-700 mb-6">
               蕙 佑 ⽯ 材 經 營 團 隊 於 2 0 0 8 年 成 ⽴ ， 專 營 各 種 ⽯ 材 批 售 。 秉 持 著
 服 務 至 上 的 理 念 ， 並 配 合 流 ⾏ 趨 勢 及 建 築 設 計 業 者 之 需 求 。</p>
