@@ -5328,7 +5328,9 @@ const SectionTitle = ({
 };
 
 const getApiKey = () => {
-  return window.GOOGLE_MAPS_API_KEY || "YOUR_GOOGLE_MAPS_API_KEY";
+  const apiKey = window.GOOGLE_MAPS_API_KEY || "YOUR_GOOGLE_MAPS_API_KEY";
+  console.log("Google Maps API Key:", apiKey ? "已設置" : "未設置");
+  return apiKey;
 };
 const useGoogleMaps = () => {
   const [isLoaded, setIsLoaded] = reactExports.useState(false);
@@ -5340,12 +5342,15 @@ const useGoogleMaps = () => {
       return;
     }
     if (window.google && window.google.maps) {
+      console.log("Google Maps 已載入");
       setIsLoaded(true);
       return;
     }
     if (document.querySelector('script[src*="maps.googleapis.com"]')) {
+      console.log("Google Maps 腳本正在載入中...");
       const checkLoaded = () => {
         if (window.google && window.google.maps) {
+          console.log("Google Maps 載入完成");
           setIsLoaded(true);
         } else {
           setTimeout(checkLoaded, 100);
@@ -5354,14 +5359,23 @@ const useGoogleMaps = () => {
       checkLoaded();
       return;
     }
+    console.log("開始載入 Google Maps API...");
     const script = document.createElement("script");
     script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
     script.async = true;
     script.defer = true;
     script.onload = () => {
-      setIsLoaded(true);
+      console.log("Google Maps API 腳本載入成功");
+      if (window.google && window.google.maps) {
+        console.log("Google Maps 物件可用");
+        setIsLoaded(true);
+      } else {
+        console.error("Google Maps 物件不可用");
+        setError("Google Maps 物件載入失敗");
+      }
     };
-    script.onerror = () => {
+    script.onerror = (e) => {
+      console.error("Google Maps API 腳本載入失敗:", e);
       setError("無法載入 Google Maps API");
     };
     document.head.appendChild(script);
