@@ -5237,7 +5237,7 @@ const FloatingContactButtons = () => {
               "bg-[#06C755] text-white hover:bg-[#05b44c]"
             ),
             "aria-label": "LINE 聊天",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/huiyoustone/icon/icon-line.png", alt: "LINE", className: "w-6 h-6 object-contain" })
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/icon/icon-line.png", alt: "LINE", className: "w-6 h-6 object-contain" })
           }
         )
       }
@@ -5481,7 +5481,7 @@ const GoogleMap = ({
 
 const HomePage = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HeroSection, { backgroundImage: "/huiyoustone/pic/home/義大利灰珍珠_220524_8.jpg", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center text-white md:mt-[280px] mt-[225px]", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HeroSection, { backgroundImage: "/pic/home/義大利灰珍珠_220524_8.jpg", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center text-white md:mt-[280px] mt-[225px]", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-4xl md:text-5xl font-bold mb-2", style: { textShadow: "4px 4px 7px rgba(0,0,0,0.6)" }, children: "HUIYOU" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-bold mb-6", style: { textShadow: "4px 4px 7px rgba(0,0,0,0.6)" }, children: "STONE" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl md:text-3xl mb-2 font-bold", style: { textShadow: "1px 1px 3px rgba(0,0,0,0.5)" }, children: "天然的石材" }),
@@ -5692,7 +5692,7 @@ const AboutPage = () => {
                 target: "_blank",
                 rel: "noopener noreferrer",
                 className: "bg-[#06C755] text-white p-2 rounded-full hover:bg-[#05b44c] transition-colors",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/huiyoustone/icon/icon-line.png", alt: "LINE", className: "w-5 h-5" })
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/icon/icon-line.png", alt: "LINE", className: "w-5 h-5" })
               }
             )
           ] })
@@ -5715,43 +5715,43 @@ const GalleryPage = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "/huiyoustone/pic/c/c7.jpg",
+      src: "/pic/c/c7.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 2,
-      src: "/huiyoustone/pic/c/c6.jpg",
+      src: "/pic/c/c6.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 3,
-      src: "/huiyoustone/pic/c/c5.jpg",
+      src: "/pic/c/c5.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 4,
-      src: "/huiyoustone/pic/c/c4.jpg",
+      src: "/pic/c/c4.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 5,
-      src: "/huiyoustone/pic/c/c3.jpg",
+      src: "/pic/c/c3.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 6,
-      src: "/huiyoustone/pic/c/c2.jpg",
+      src: "/pic/c/c2.jpg",
       alt: "礦區實照",
       title: ""
     },
     {
       id: 7,
-      src: "/huiyoustone/pic/c/c1.jpg",
+      src: "/pic/c/c1.jpg",
       alt: "礦區實照",
       title: ""
     }
@@ -5834,42 +5834,30 @@ const ProductsPage = () => {
   const products = [
     {
       id: 1,
-      name: "比利時木紋",
-      image: "/huiyoustone/pic/product/p1/A01-01.jpg",
-      description: "高級木紋石材，紋理自然優美，適合用於高檔室內裝潢。",
-      detailImages: [
-        "/huiyoustone/pic/product/p1/A01-01.jpg",
-        "/huiyoustone/pic/product/p1/A01-02.jpg",
-        "/huiyoustone/pic/product/p1/A01-03.jpg",
-        "/huiyoustone/pic/product/p1/A01-04.jpg",
-        "/huiyoustone/pic/product/p1/A01-05.jpg"
-      ],
-      specifications: {
-        origin: "",
-        size: "標準板材尺寸：240 x 120 公分",
-        thickness: "可選厚度：2cm、3cm",
-        finish: "拋光、平光、仿古",
-        application: "地板、牆面、檯面等"
-      }
+      name: "義大利灰珍珠",
+      description: "高級大理石，質地細緻，色澤優雅",
+      image: "/pic/product/p1/A01-01.jpg",
+      category: "大理石",
+      images: [
+        "/pic/product/p1/A01-01.jpg",
+        "/pic/product/p1/A01-02.jpg",
+        "/pic/product/p1/A01-03.jpg",
+        "/pic/product/p1/A01-04.jpg",
+        "/pic/product/p1/A01-05.jpg"
+      ]
     },
     {
       id: 2,
-      name: "白海棠(蘇非亞)",
+      name: "義大利白大理石",
+      description: "純白大理石，質地細緻，適合各種裝潢風格",
       image: "https://pic03.eapple.com.tw/huiyoustone/about-06.jpg",
-      description: "源自義大利的高級白色大理石，帶有典雅的灰色紋路，是豪宅和高級商業空間的首選。",
-      detailImages: [
+      category: "大理石",
+      images: [
         "https://pic03.eapple.com.tw/huiyoustone/about-06.jpg",
         "https://pic03.eapple.com.tw/huiyoustone/about-07.jpg",
         "https://pic03.eapple.com.tw/huiyoustone/about-08.jpg",
         "https://pic03.eapple.com.tw/huiyoustone/about-010.jpg"
-      ],
-      specifications: {
-        origin: "義大利",
-        size: "標準板材尺寸：240 x 120 公分",
-        thickness: "可選厚度：1.5cm、2cm、3cm",
-        finish: "拋光、磨砂、亞光",
-        application: "地板、牆面、檯面等"
-      }
+      ]
     }
     // 其他產品...
   ];
@@ -6046,7 +6034,7 @@ const ProductsPage = () => {
                         target: "_blank",
                         rel: "noopener noreferrer",
                         className: "w-8 h-8 rounded-full bg-[#06C755] flex items-center justify-center hover:bg-[#05b44c] transition-colors shadow-md",
-                        children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/huiyoustone/icon/icon-line.png", alt: "LINE", className: "w-5 h-5 object-contain" })
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/icon/icon-line.png", alt: "LINE", className: "w-5 h-5 object-contain" })
                       }
                     ),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
