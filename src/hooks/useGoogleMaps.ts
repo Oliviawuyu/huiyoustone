@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 
 // 從 window 物件獲取 API Key，避免在建置時被硬編碼
 const getApiKey = () => {
-  return (window as any).GOOGLE_MAPS_API_KEY || 'YOUR_GOOGLE_MAPS_API_KEY';
+  const apiKey = (window as any).GOOGLE_MAPS_API_KEY || 'YOUR_GOOGLE_MAPS_API_KEY';
+  console.log('Google Maps API Key:', apiKey ? '已設置' : '未設置');
+  return apiKey;
 };
 
 export const useGoogleMaps = () => {
@@ -20,14 +22,17 @@ export const useGoogleMaps = () => {
 
     // 檢查是否已經載入
     if (window.google && window.google.maps) {
+      console.log('Google Maps 已載入');
       setIsLoaded(true);
       return;
     }
 
     // 檢查是否已經在載入中
     if (document.querySelector('script[src*="maps.googleapis.com"]')) {
+      console.log('Google Maps 腳本正在載入中...');
       const checkLoaded = () => {
         if (window.google && window.google.maps) {
+          console.log('Google Maps 載入完成');
           setIsLoaded(true);
         } else {
           setTimeout(checkLoaded, 100);
@@ -38,16 +43,25 @@ export const useGoogleMaps = () => {
     }
 
     // 載入 Google Maps API
+    console.log('開始載入 Google Maps API...');
     const script = document.createElement('script');
     script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
     script.async = true;
     script.defer = true;
 
     script.onload = () => {
-      setIsLoaded(true);
+      console.log('Google Maps API 腳本載入成功');
+      if (window.google && window.google.maps) {
+        console.log('Google Maps 物件可用');
+        setIsLoaded(true);
+      } else {
+        console.error('Google Maps 物件不可用');
+        setError('Google Maps 物件載入失敗');
+      }
     };
 
-    script.onerror = () => {
+    script.onerror = (e) => {
+      console.error('Google Maps API 腳本載入失敗:', e);
       setError('無法載入 Google Maps API');
     };
 
