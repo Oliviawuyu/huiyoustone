@@ -5494,7 +5494,6 @@ const HomePage = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-16 bg-gray-50", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "container mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8 items-center", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(SectionTitle, { chineseTitle: "關於我們", englishTitle: "About" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-4", children: "2008" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-6", children: "蕙 佑 ⽯ 材 經 營 團 隊 於 2 0 0 8 年 成 ⽴ ， 專 營 各 種 ⽯ 材 批 售 。 秉 持 著 服 務 至 上 的 理 念 ， 並 配 合 流 ⾏ 趨 勢 及 建 築 設 計 業 者 之 需 求 。" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-700 mb-6", children: "近 年 從 國 外 進 ⼜ 多 樣 化 ⽯ 材 ， 質 地 堅 固 ， 紋 理 景 緻 多 樣 ， 展 現 ⼤ ⾃ 然 鬼 斧 神 ⼯ 之 驚 奇 ， 並 獲 五 星 級 連 鎖 觀 光 飯 店 及 北 部 豪 宅 建 案 採 購 運 ⽤ ， 相 得 益 彰 迭 獲 好 評 。" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-500 mb-6", children: "Huiyou Stone Materials management team was established in 2008, specializing in the wholesale of various stone materials. We uphold the principle of service excellence while adapting to current trends and meeting the needs of architectural design professionals." }),
