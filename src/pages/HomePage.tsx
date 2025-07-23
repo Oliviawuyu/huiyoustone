@@ -94,7 +94,7 @@ const HomePage = () => {
             <div>
               <div className="space-y-4 text-gray-700">
                 <p>03-8235309</p>
-                <p>0978-218-598</p>
+                <p>0918-140-700</p>
                 <p>Email: huiyoustone@gmail.com</p>
                 <p>Email: jinestone1118@gmail.com</p>
                 <p>花蓮縣花蓮市美工六街20之6號</p>

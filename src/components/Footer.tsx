@@ -25,7 +25,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Phone size={16} className="mr-2" />
-                <span>手機：0918-140700</span>
+                <span>手機：0918-140-700</span>
               </div>
               <div className="flex items-center">
                 <Mail size={16} className="mr-2" />

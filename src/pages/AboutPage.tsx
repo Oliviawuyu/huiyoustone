@@ -65,7 +65,7 @@ const AboutPage = () => {
                     <ul className="space-y-3 text-gray-700">
                       <li className="flex items-start">
                           <span className="font-semibold mr-2">電話：</span>
-                          <a href="tel:0918-140700" className="hover:text-blue-600">0918-140700</a>
+                          <a href="tel:0918-140700" className="hover:text-blue-600">0918-140-700</a>
                       </li>
                       <li className="flex items-start">
                         <span className="font-semibold mr-2">LINE：</span>
