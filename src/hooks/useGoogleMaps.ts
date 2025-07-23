@@ -1,14 +1,19 @@
 import { useEffect, useState } from 'react';
 
-const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || 'YOUR_GOOGLE_MAPS_API_KEY';
+// 從 window 物件獲取 API Key，避免在建置時被硬編碼
+const getApiKey = () => {
+  return (window as any).GOOGLE_MAPS_API_KEY || 'YOUR_GOOGLE_MAPS_API_KEY';
+};
 
 export const useGoogleMaps = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const apiKey = getApiKey();
+    
     // 檢查 API Key 是否已設置
-    if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === 'YOUR_GOOGLE_MAPS_API_KEY') {
+    if (!apiKey || apiKey === 'YOUR_GOOGLE_MAPS_API_KEY') {
       setError('請設置 Google Maps API Key');
       return;
     }
@@ -34,7 +39,7 @@ export const useGoogleMaps = () => {
 
     // 載入 Google Maps API
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
     script.async = true;
     script.defer = true;
 

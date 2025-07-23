@@ -3,14 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage":"https://github.com/oliviawuyu/huiyoustone",
+  "homepage": "https://Oliviawuyu.github.io/huiyoustone",
   "scripts": {
     "dev": "npm run typecheck && vite",
     "typecheck": "tsc --noEmit --isolatedModules",
     "build": "npm run typecheck && vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519' gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.0.2",
@@ -32,6 +32,7 @@
     "@radix-ui/react-toast": "^1.0.3",
     "@radix-ui/react-toggle-group": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.3",
+    "@types/google.maps": "^3.58.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gh-pages": "^6.3.0",
