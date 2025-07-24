@@ -1,15 +1,65 @@
 import { useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import SectionTitle from '../components/SectionTitle';
+import SEOHead from '../components/SEOHead';
 import { X, Phone } from 'lucide-react';
+import { usePageEngagement, useProductTracking, useContactTracking } from '../hooks/useGA4';
 
 const ProductsPage = () => {
+  // GA4 Hooks
+  usePageEngagement('產品頁面');
+  const { trackProductView, trackProductInquiry } = useProductTracking();
+  const { trackContact } = useContactTracking();
+
   // 控制彈窗顯示
   const [selectedProduct, setSelectedProduct] = useState(null);
   // 控制當前顯示的大圖
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   // 控制當前標籤
   const [activeTab, setActiveTab] = useState('info');
+
+  // 結構化資料 - 產品目錄
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "蕙佑石材產品目錄",
+    "description": "提供各種優質石材產品，包括義大利進口大理石、天然花崗岩等",
+    "itemListElement": [
+      {
+        "@type": "Product",
+        "position": 1,
+        "name": "義大利灰珍珠大理石",
+        "description": "高級大理石，質地細緻，色澤優雅，適合室內地板、牆面、檯面裝潢",
+        "image": "/pic/product/p1/A01-01.jpg",
+        "brand": {
+          "@type": "Brand",
+          "name": "蕙佑石材"
+        },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "price": "洽詢",
+          "priceCurrency": "TWD"
+        }
+      },
+      {
+        "@type": "Product",
+        "position": 2,
+        "name": "義大利白大理石",
+        "description": "純白大理石，質地細緻，適合各種裝潢風格",
+        "brand": {
+          "@type": "Brand",
+          "name": "蕙佑石材"
+        },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "price": "洽詢",
+          "priceCurrency": "TWD"
+        }
+      }
+    ]
+  };
 
   // 產品資料
   const products = [
@@ -53,8 +103,7 @@ const ProductsPage = () => {
         finish: "霧面",
         application: "室內牆面、地板裝飾"
       }
-    },
-    // 其他產品...
+    }
   ];
 
   // 開啟產品詳情彈窗
@@ -64,6 +113,9 @@ const ProductsPage = () => {
     setActiveTab('info'); // 預設顯示商品資訊標籤
     // 禁止背景滾動
     document.body.style.overflow = 'hidden';
+    
+    // 追蹤產品查看事件
+    trackProductView(product.name, product.category);
   };
 
   // 關閉產品詳情彈窗
@@ -84,6 +136,15 @@ const ProductsPage = () => {
     setActiveTab(tab);
   };
 
+  // 聯絡相關追蹤函數
+  const handleContactClick = (method: 'phone' | 'line' | 'facebook') => {
+    trackContact(method);
+    
+    if (selectedProduct) {
+      trackProductInquiry(selectedProduct.name);
+    }
+  };
+
   // 聯絡資訊
   const phoneNumber = '0918-140700';
   const lineId = '~jine1118';
@@ -91,6 +152,14 @@ const ProductsPage = () => {
 
   return (
       <div>
+        <SEOHead 
+          title="嚴選石材產品 - 蕙佑石材 | 義大利大理石 | 花崗岩 | 石英石"
+          description="蕙佑石材提供多樣化優質石材產品，包括義大利進口大理石、天然花崗岩、石英石等。適用於地板、牆面、檯面裝修，品質保證，歡迎洽詢。"
+          keywords="石材產品,義大利大理石,花崗岩,石英石,大理石檯面,石材地板,石材牆面,進口石材,天然石材,蕙佑石材產品"
+          canonical="https://huiyoustone.tw/products"
+          structuredData={structuredData}
+        />
+
         <HeroSection
             backgroundImage="/pic/share/abg-02.png"
             height="h-[40vh]"
@@ -251,6 +320,7 @@ const ProductsPage = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors shadow-md"
+                          onClick={() => handleContactClick('facebook')}
                       >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -269,6 +339,7 @@ const ProductsPage = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-8 h-8 rounded-full bg-[#06C755] flex items-center justify-center hover:bg-[#05b44c] transition-colors shadow-md"
+                          onClick={() => handleContactClick('line')}
                       >
                         <img src="/icon/icon-line.png" alt="LINE" className="w-5 h-5 object-contain" />
                       </a>
@@ -277,6 +348,7 @@ const ProductsPage = () => {
                       <a
                           href={`tel:${phoneNumber}`}
                           className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors shadow-md"
+                          onClick={() => handleContactClick('phone')}
                       >
                         <Phone className="text-white" size={14} />
                       </a>

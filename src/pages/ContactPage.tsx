@@ -1,10 +1,54 @@
 import HeroSection from '../components/HeroSection';
 import SectionTitle from '../components/SectionTitle';
 import GoogleMap from '../components/GoogleMap';
+import SEOHead from '../components/SEOHead';
+import { usePageEngagement, useContactTracking } from '../hooks/useGA4';
 
 const ContactPage = () => {
+  // GA4 Hooks
+  usePageEngagement('聯絡頁面');
+  const { trackContact } = useContactTracking();
+
+  // 聯絡互動追蹤函數
+  const handleContactClick = (method: 'phone' | 'email') => {
+    trackContact(method);
+  };
+
+  // 結構化資料 - 聯絡頁面
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "蕙佑石材",
+      "telephone": "+886-3-8235309",
+      "email": "huiyoustone@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "美工六街20之6號",
+        "addressLocality": "花蓮市", 
+        "addressRegion": "花蓮縣",
+        "postalCode": "",
+        "addressCountry": "TW"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 23.9871,
+        "longitude": 121.6014
+      },
+      "openingHours": "Mo-Fr 08:00-17:00"
+    }
+  };
+
   return (
     <div>
+      <SEOHead 
+        title="聯絡我們 - 蕙佑石材 | 花蓮石材公司聯絡方式 | 免費諮詢"
+        description="聯絡蕙佑石材獲取專業石材服務諮詢。電話: 03-8235309，地址: 花蓮縣花蓮市美工六街20之6號。提供免費石材工程估價和專業建議。"
+        keywords="蕙佑石材聯絡方式,花蓮石材公司電話,石材工程諮詢,免費估價,石材公司地址,聯絡蕙佑石材"
+        canonical="https://huiyoustone.tw/contact"
+        structuredData={structuredData}
+      />
       <HeroSection 
         backgroundImage="/pic/share/abg-02.png"
         height="h-[40vh]"
@@ -29,17 +73,47 @@ const ContactPage = () => {
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-700">
                   <h3 className="text-lg font-bold mb-3 text-amber-700">電話</h3>
                   <div className="space-y-1">
-                    <p className="text-gray-700">03-8235309</p>
-                    <p className="text-gray-700">03-8246298</p>
-                    <p className="text-gray-700">0918-140-700</p>
+                    <a 
+                      href="tel:03-8235309" 
+                      className="text-gray-700 hover:text-amber-700 cursor-pointer block"
+                      onClick={() => handleContactClick('phone')}
+                    >
+                      03-8235309
+                    </a>
+                    <a 
+                      href="tel:03-8246298" 
+                      className="text-gray-700 hover:text-amber-700 cursor-pointer block"
+                      onClick={() => handleContactClick('phone')}
+                    >
+                      03-8246298
+                    </a>
+                    <a 
+                      href="tel:0918-140-700" 
+                      className="text-gray-700 hover:text-amber-700 cursor-pointer block"
+                      onClick={() => handleContactClick('phone')}
+                    >
+                      0918-140-700
+                    </a>
                   </div>
                 </div>
                 
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-700">
                   <h3 className="text-lg font-bold mb-3 text-amber-700">Email</h3>
-                  <p className="text-gray-700">huiyoustone@gmail.com</p>
+                  <a 
+                    href="mailto:huiyoustone@gmail.com" 
+                    className="text-gray-700 hover:text-amber-700 cursor-pointer block"
+                    onClick={() => handleContactClick('email')}
+                  >
+                    huiyoustone@gmail.com
+                  </a>
                   <br />
-                  <p className="text-gray-700">jinestone1118@gmail.com</p>
+                  <a 
+                    href="mailto:jinestone1118@gmail.com" 
+                    className="text-gray-700 hover:text-amber-700 cursor-pointer block"
+                    onClick={() => handleContactClick('email')}
+                  >
+                    jinestone1118@gmail.com
+                  </a>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-700">
                   <h3 className="text-lg font-bold mb-3 text-amber-700">地址</h3>

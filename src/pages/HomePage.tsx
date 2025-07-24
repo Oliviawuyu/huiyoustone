@@ -1,11 +1,90 @@
 import HeroSection from '../components/HeroSection';
 import SectionTitle from '../components/SectionTitle';
 import GoogleMap from '../components/GoogleMap';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
+import { usePageEngagement, useContactTracking } from '../hooks/useGA4';
 
 const HomePage = () => {
+  // GA4 Hooks
+  usePageEngagement('首頁');
+  const { trackContact } = useContactTracking();
+
+  // 聯絡互動追蹤函數
+  const handleContactClick = (method: 'phone' | 'email') => {
+    trackContact(method);
+  };
+
+  // 結構化資料 - 本地商業
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "蕙佑石材",
+    "description": "蕙佑石材經營團隊於2008年成立，專營各種石材批售。秉持著服務至上的理念，並配合流行趨勢及建築設計業者之需求。",
+    "url": "https://huiyoustone.tw",
+    "telephone": "+886-3-8235309",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "美工六街20之6號",
+      "addressLocality": "花蓮市",
+      "addressRegion": "花蓮縣",
+      "addressCountry": "TW"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 23.9871,
+      "longitude": 121.6014
+    },
+    "openingHours": "Mo-Fr 08:00-17:00",
+    "priceRange": "$$",
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 23.9871,
+        "longitude": 121.6014
+      },
+      "geoRadius": "50000"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "石材產品服務",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "大理石工程施工"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "石材加工裝潢"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "石材電視牆施工"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <div>
+      <SEOHead 
+        title="蕙佑石材 - 專業石材公司 | 花蓮大理石工廠 | 石材工程施工"
+        description="蕙佑石材於2008年成立，專營大理石、花崗岩等石材批售。提供石材工程、施工、加工、裝潢等一站式服務。服務範圍涵蓋花蓮、台北，是您值得信賴的石材公司。"
+        keywords="蕙佑石材,石材公司,花蓮石材公司,大理石工廠,花蓮大理石工廠,石材工程,大理石施工,石材加工,石材裝潢,石材電視牆,大理石檯面,石材地坪,花蓮石材,台北石材"
+        ogImage="/logo1.png"
+        canonical="https://huiyoustone.tw/"
+        structuredData={structuredData}
+      />
       {/* Hero Section */}
       <HeroSection 
         backgroundImage="/pic/home/義大利灰珍珠_220524_8.jpg"
@@ -93,10 +172,34 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <div className="space-y-4 text-gray-700">
-                <p>03-8235309</p>
-                <p>0918-140-700</p>
-                <p>Email: huiyoustone@gmail.com</p>
-                <p>Email: jinestone1118@gmail.com</p>
+                <a 
+                  href="tel:03-8235309" 
+                  className="block hover:text-amber-700 cursor-pointer"
+                  onClick={() => handleContactClick('phone')}
+                >
+                  03-8235309
+                </a>
+                <a 
+                  href="tel:0918-140-700" 
+                  className="block hover:text-amber-700 cursor-pointer"
+                  onClick={() => handleContactClick('phone')}
+                >
+                  0918-140-700
+                </a>
+                <a 
+                  href="mailto:huiyoustone@gmail.com" 
+                  className="block hover:text-amber-700 cursor-pointer"
+                  onClick={() => handleContactClick('email')}
+                >
+                  Email: huiyoustone@gmail.com
+                </a>
+                <a 
+                  href="mailto:jinestone1118@gmail.com" 
+                  className="block hover:text-amber-700 cursor-pointer"
+                  onClick={() => handleContactClick('email')}
+                >
+                  Email: jinestone1118@gmail.com
+                </a>
                 <p>花蓮縣花蓮市美工六街20之6號</p>
               </div>
             </div>

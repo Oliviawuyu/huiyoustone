@@ -1,9 +1,50 @@
 import HeroSection from '../components/HeroSection';
 import SectionTitle from '../components/SectionTitle';
+import SEOHead from '../components/SEOHead';
+import { usePageEngagement, useContactTracking } from '../hooks/useGA4';
 
 const AboutPage = () => {
+  // GA4 Hooks
+  usePageEngagement('公司簡介頁面');
+  const { trackContact } = useContactTracking();
+
+  // 聯絡互動追蹤函數
+  const handleContactClick = (method: 'phone' | 'line' | 'facebook') => {
+    trackContact(method);
+  };
+
+  // 結構化資料 - 關於我們頁面
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "蕙佑石材",
+      "foundingDate": "2008",
+      "description": "蕙佑石材經營團隊於2008年成立，專營各種石材批售。秉持著服務至上的理念，並配合流行趨勢及建築設計業者之需求。",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "美工六街20之6號",
+        "addressLocality": "花蓮市",
+        "addressRegion": "花蓮縣",
+        "addressCountry": "TW"
+      },
+      "telephone": "+886-3-8235309",
+      "email": "huiyoustone@gmail.com",
+      "url": "https://huiyoustone.tw"
+    }
+  };
+
   return (
       <div>
+        <SEOHead 
+          title="公司簡介 - 蕙佑石材 | 2008年成立專業石材公司"
+          description="蕙佑石材成立於2008年，專營各種石材批售，提供大理石、花崗岩、石英石等優質石材。從選購、切割、加工到安裝，提供一站式專業服務。"
+          keywords="蕙佑石材公司簡介,石材公司歷史,專業石材團隊,石材批售,大理石公司,花崗岩供應商,石材加工廠"
+          canonical="https://huiyoustone.tw/about"
+          structuredData={structuredData}
+        />
+
         <HeroSection
             backgroundImage="/pic/share/abg-02.png"
             height="h-[40vh]"
@@ -65,7 +106,13 @@ const AboutPage = () => {
                     <ul className="space-y-3 text-gray-700">
                       <li className="flex items-start">
                           <span className="font-semibold mr-2">電話：</span>
-                          <a href="tel:0918-140700" className="hover:text-blue-600">0918-140-700</a>
+                          <a 
+                            href="tel:0918-140700" 
+                            className="hover:text-blue-600"
+                            onClick={() => handleContactClick('phone')}
+                          >
+                            0918-140-700
+                          </a>
                       </li>
                       <li className="flex items-start">
                         <span className="font-semibold mr-2">LINE：</span>
@@ -85,6 +132,7 @@ const AboutPage = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors"
+                          onClick={() => handleContactClick('facebook')}
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z" />
@@ -95,6 +143,7 @@ const AboutPage = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-[#06C755] text-white p-2 rounded-full hover:bg-[#05b44c] transition-colors"
+                          onClick={() => handleContactClick('line')}
                       >
                         <img src="/icon/icon-line.png" alt="LINE" className="w-5 h-5" />
                       </a>

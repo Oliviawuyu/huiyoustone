@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# 特定文件和目錄的爬取規則
+Allow: /assets/
+Allow: /pic/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+
+# 排除不需要索引的文件
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /dist/
+Disallow: /*.map
+
+# Sitemap 位置
+Sitemap: https://huiyoustone.tw/sitemap.xml
+
+# 爬取延遲 (秒)
+Crawl-delay: 1 

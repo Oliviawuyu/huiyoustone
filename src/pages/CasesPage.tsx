@@ -1,7 +1,36 @@
 import HeroSection from '../components/HeroSection';
 import SectionTitle from '../components/SectionTitle';
+import SEOHead from '../components/SEOHead';
+import { usePageEngagement } from '../hooks/useGA4';
 
 const CasesPage = () => {
+  // GA4 Hooks
+  usePageEngagement('案例分享頁面');
+
+  // 結構化資料 - 作品集
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "蕙佑石材案例分享",
+    "description": "展示蕙佑石材的專業施工案例，包括商業空間、住宅裝潢、飯店大廳等各類石材工程項目",
+    "creator": {
+      "@type": "Organization",
+      "name": "蕙佑石材"
+    },
+    "workExample": [
+      {
+        "@type": "CreativeWork",
+        "name": "商業空間石材牆面",
+        "description": "為高級商業空間設計並安裝石材牆面，提升空間質感和品味"
+      },
+      {
+        "@type": "CreativeWork", 
+        "name": "飯店大廳地板",
+        "description": "為五星級飯店大廳提供精美的大理石地板，展現高貴典雅的氛圍"
+      }
+    ]
+  };
+
   // Sample case studies
   const cases = [
     {
@@ -48,6 +77,13 @@ const CasesPage = () => {
 
   return (
     <div>
+      <SEOHead 
+        title="案例分享 - 蕙佑石材 | 石材工程實績 | 專業施工案例"
+        description="查看蕙佑石材的專業施工案例，包括商業空間、住宅裝潢、飯店大廳等各類石材工程項目。展現我們在大理石、花崗岩施工方面的專業技術。"
+        keywords="石材工程案例,大理石施工實績,商業空間裝潢,住宅石材工程,飯店大廳地板,石材牆面施工,蕙佑石材案例"
+        canonical="https://huiyoustone.tw/cases"
+        structuredData={structuredData}
+      />
       <HeroSection 
         backgroundImage="/pic/share/abg-02.png"
         height="h-[40vh]"

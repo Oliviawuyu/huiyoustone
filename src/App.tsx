@@ -9,10 +9,15 @@ import ProductsPage from './pages/ProductsPage';
 import CasesPage from './pages/CasesPage';
 import ContactPage from './pages/ContactPage';
 import ScrollToTop from './components/ScrollToTop';
+import { usePageTracking } from './hooks/useGA4';
 
-function App() {
+// 內部組件來使用路由追蹤Hook
+const AppContent = () => {
+  // 初始化頁面追蹤
+  usePageTracking();
+
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Header />
@@ -29,6 +34,14 @@ function App() {
         <Footer />
         <FloatingElements />
       </div>
+    </>
+  );
+};
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
