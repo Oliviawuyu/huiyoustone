@@ -3,15 +3,34 @@ import SectionTitle from '../components/SectionTitle';
 import GoogleMap from '../components/GoogleMap';
 import SEOHead from '../components/SEOHead';
 import { usePageEngagement, useContactTracking } from '../hooks/useGA4';
+import { useState } from 'react';
+import { Copy } from 'lucide-react';
 
 const ContactPage = () => {
   // GA4 Hooks
   usePageEngagement('聯絡頁面');
   const { trackContact } = useContactTracking();
 
+  // 複製提示狀態
+  const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
+
   // 聯絡互動追蹤函數
   const handleContactClick = (method: 'phone' | 'email') => {
     trackContact(method);
+  };
+
+  // 複製email地址函數
+  const copyEmailToClipboard = (email: string) => {
+    navigator.clipboard.writeText(email).then(() => {
+      setCopiedEmail(email);
+      handleContactClick('email');
+      // 3秒後清除提示
+      setTimeout(() => {
+        setCopiedEmail(null);
+      }, 3000);
+    }).catch(err => {
+      console.error('複製失敗:', err);
+    });
   };
 
   // 結構化資料 - 聯絡頁面
@@ -99,21 +118,36 @@ const ContactPage = () => {
                 
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-700">
                   <h3 className="text-lg font-bold mb-3 text-amber-700">Email</h3>
-                  <a 
-                    href="mailto:huiyoustone@gmail.com" 
-                    className="text-gray-700 hover:text-amber-700 cursor-pointer block"
-                    onClick={() => handleContactClick('email')}
-                  >
-                    huiyoustone@gmail.com
-                  </a>
-                  <br />
-                  <a 
-                    href="mailto:jinestone1118@gmail.com" 
-                    className="text-gray-700 hover:text-amber-700 cursor-pointer block"
-                    onClick={() => handleContactClick('email')}
-                  >
-                    jinestone1118@gmail.com
-                  </a>
+                  <div className="text-gray-700 block relative flex items-center mb-2">
+                    {copiedEmail === 'huiyoustone@gmail.com' && (
+                      <span className="absolute left-0 -top-8 bg-green-500 text-white px-2 py-1 rounded text-sm whitespace-nowrap">
+                        已複製！
+                      </span>
+                    )}
+                    <span className={`transition-colors duration-300 ${copiedEmail === 'huiyoustone@gmail.com' ? 'text-amber-700' : 'text-gray-700'}`}>
+                      huiyoustone@gmail.com
+                    </span>
+                    <Copy 
+                      size={20} 
+                      className={`ml-2 cursor-pointer p-1 transition-colors duration-300 ${copiedEmail === 'huiyoustone@gmail.com' ? 'text-amber-700' : 'text-gray-400 hover:text-amber-700'}`}
+                      onClick={() => copyEmailToClipboard('huiyoustone@gmail.com')}
+                    />
+                  </div>
+                  <div className="text-gray-700 block relative flex items-center">
+                    {copiedEmail === 'jinestone1118@gmail.com' && (
+                      <span className="absolute left-0 -top-8 bg-green-500 text-white px-2 py-1 rounded text-sm whitespace-nowrap">
+                        已複製！
+                      </span>
+                    )}
+                    <span className={`transition-colors duration-300 ${copiedEmail === 'jinestone1118@gmail.com' ? 'text-amber-700' : 'text-gray-700'}`}>
+                      jinestone1118@gmail.com
+                    </span>
+                    <Copy 
+                      size={20} 
+                      className={`ml-2 cursor-pointer p-1 transition-colors duration-300 ${copiedEmail === 'jinestone1118@gmail.com' ? 'text-amber-700' : 'text-gray-400 hover:text-amber-700'}`}
+                      onClick={() => copyEmailToClipboard('jinestone1118@gmail.com')}
+                    />
+                  </div>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-700">
                   <h3 className="text-lg font-bold mb-3 text-amber-700">地址</h3>

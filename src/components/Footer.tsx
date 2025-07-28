@@ -1,7 +1,31 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Printer } from 'lucide-react';
+import { Phone, Mail, MapPin, Printer, Copy } from 'lucide-react';
+import { useState } from 'react';
+import { useContactTracking } from '../hooks/useGA4';
 
 const Footer = () => {
+  const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
+  const { trackContact } = useContactTracking();
+
+  // 聯絡互動追蹤函數
+  const handleContactClick = (method: 'phone' | 'email') => {
+    trackContact(method);
+  };
+
+  // 複製email地址函數
+  const copyEmailToClipboard = (email: string) => {
+    navigator.clipboard.writeText(email).then(() => {
+      setCopiedEmail(email);
+      handleContactClick('email');
+      // 3秒後清除提示
+      setTimeout(() => {
+        setCopiedEmail(null);
+      }, 3000);
+    }).catch(err => {
+      console.error('複製失敗:', err);
+    });
+  };
+
   return (
     <footer className="bg-gray-100 text-gray-800">
       <div className="container mx-auto px-4 py-8">
@@ -27,13 +51,37 @@ const Footer = () => {
                 <Phone size={16} className="mr-2" />
                 <span>手機：0918-140-700</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center relative">
                 <Mail size={16} className="mr-2" />
-                <span>huiyoustone@gmail.com</span>
+                {copiedEmail === 'huiyoustone@gmail.com' && (
+                  <span className="absolute left-0 -top-8 bg-green-500 text-white px-2 py-1 rounded text-sm whitespace-nowrap z-50">
+                    已複製！
+                  </span>
+                )}
+                <span className={`transition-colors duration-300 ${copiedEmail === 'huiyoustone@gmail.com' ? 'text-amber-700' : 'text-gray-800'}`}>
+                  huiyoustone@gmail.com
+                </span>
+                <Copy 
+                  size={20} 
+                  className={`ml-2 cursor-pointer p-1 transition-colors duration-300 ${copiedEmail === 'huiyoustone@gmail.com' ? 'text-amber-700' : 'text-gray-400 hover:text-amber-700'}`}
+                  onClick={() => copyEmailToClipboard('huiyoustone@gmail.com')}
+                />
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center relative">
                 <Mail size={16} className="mr-2" />
-                <span>jinestone1118@gmail.com</span>
+                {copiedEmail === 'jinestone1118@gmail.com' && (
+                  <span className="absolute left-0 -top-8 bg-green-500 text-white px-2 py-1 rounded text-sm whitespace-nowrap z-50">
+                    已複製！
+                  </span>
+                )}
+                <span className={`transition-colors duration-300 ${copiedEmail === 'jinestone1118@gmail.com' ? 'text-amber-700' : 'text-gray-800'}`}>
+                  jinestone1118@gmail.com
+                </span>
+                <Copy 
+                  size={20} 
+                  className={`ml-2 cursor-pointer p-1 transition-colors duration-300 ${copiedEmail === 'jinestone1118@gmail.com' ? 'text-amber-700' : 'text-gray-400 hover:text-amber-700'}`}
+                  onClick={() => copyEmailToClipboard('jinestone1118@gmail.com')}
+                />
               </div>
               <div className="flex items-start">
                 <MapPin size={16} className="mr-2 mt-1" />
