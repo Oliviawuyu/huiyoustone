@@ -185,7 +185,7 @@ const HomePage = () => {
             <div>
               <img 
                 src="/pic/home/LINE_ALBUM_義大利灰珍珠_220524_5.jpg" 
-                alt="義大利灰珍珠" 
+                alt=""
                 className="w-full h-auto rounded-md shadow-lg"
               />
             </div>
