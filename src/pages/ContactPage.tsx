@@ -65,6 +65,7 @@ const ContactPage = () => {
         title="聯絡我們 - 蕙佑石材 | 花蓮石材公司聯絡方式 | 免費諮詢"
         description="聯絡蕙佑石材獲取專業石材服務諮詢。電話: 03-8235309，地址: 花蓮縣花蓮市美工六街20之6號。提供免費石材工程估價和專業建議。"
         keywords="蕙佑石材聯絡方式,花蓮石材公司電話,石材工程諮詢,免費估價,石材公司地址,聯絡蕙佑石材"
+        ogImage="/pic/home/義大利灰珍珠_220524_8.jpg"
         canonical="https://huiyoustone.tw/contact"
         structuredData={structuredData}
       />

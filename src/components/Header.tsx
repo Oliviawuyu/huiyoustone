@@ -15,7 +15,7 @@ const Header = () => {
         <Link to="/" className="flex items-center">
           <img 
             src="/logo1.png" 
-            alt="蕙佑石材-石材公司,花蓮石材公司" 
+            alt="蕙佑石材股份有限公司"
             className="h-12 w-auto"
           />
         </Link>

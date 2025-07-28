@@ -35,64 +35,106 @@ const HomePage = () => {
   };
 
   // 結構化資料 - 本地商業
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "蕙佑石材",
-    "description": "蕙佑石材經營團隊於2008年成立，專營各種石材批售。秉持著服務至上的理念，並配合流行趨勢及建築設計業者之需求。",
-    "url": "https://huiyoustone.tw",
-    "telephone": "+886-3-8235309",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "美工六街20之6號",
-      "addressLocality": "花蓮市",
-      "addressRegion": "花蓮縣",
-      "addressCountry": "TW"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 23.9871,
-      "longitude": 121.6014
-    },
-    "openingHours": "Mo-Fr 08:00-17:00",
-    "priceRange": "$$",
-    "serviceArea": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "蕙佑石材",
+      "alternateName": "Huiyou Stone",
+      "description": "蕙佑石材經營團隊於2008年成立，專營各種石材批售。秉持著服務至上的理念，並配合流行趨勢及建築設計業者之需求。",
+      "url": "https://huiyoustone.tw",
+      "logo": "https://huiyoustone.tw/logo1.png",
+      "telephone": "+886-3-8235309",
+      "email": "huiyoustone@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "美工六街20之6號",
+        "addressLocality": "花蓮市",
+        "addressRegion": "花蓮縣",
+        "addressCountry": "TW"
+      },
+      "geo": {
         "@type": "GeoCoordinates",
         "latitude": 23.9871,
         "longitude": 121.6014
       },
-      "geoRadius": "50000"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "石材產品服務",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "大理石工程施工"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "石材加工裝潢"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "石材電視牆施工"
-          }
-        }
+      "foundingDate": "2008",
+      "openingHours": "Mo-Fr 08:00-17:00",
+      "sameAs": [
+        "https://www.facebook.com/huiyoustone/"
       ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "蕙佑石材",
+      "alternateName": "Huiyou Stone",
+      "url": "https://huiyoustone.tw",
+      "description": "專業石材公司，提供大理石、花崗岩等石材批售及工程施工服務",
+      "publisher": {
+        "@type": "Organization",
+        "name": "蕙佑石材"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "蕙佑石材",
+      "description": "蕙佑石材經營團隊於2008年成立，專營各種石材批售。秉持著服務至上的理念，並配合流行趨勢及建築設計業者之需求。",
+      "url": "https://huiyoustone.tw",
+      "telephone": "+886-3-8235309",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "美工六街20之6號",
+        "addressLocality": "花蓮市",
+        "addressRegion": "花蓮縣",
+        "addressCountry": "TW"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 23.9871,
+        "longitude": 121.6014
+      },
+      "openingHours": "Mo-Fr 08:00-17:00",
+      "priceRange": "$$",
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 23.9871,
+          "longitude": 121.6014
+        },
+        "geoRadius": "50000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "石材產品服務",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "大理石工程施工"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "石材加工裝潢"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "石材電視牆施工"
+            }
+          }
+        ]
+      }
     }
-  };
+  ];
 
   return (
     <div>
@@ -100,7 +142,7 @@ const HomePage = () => {
         title="蕙佑石材 - 專業石材公司 | 花蓮大理石工廠 | 石材工程施工"
         description="蕙佑石材於2008年成立，專營大理石、花崗岩等石材批售。提供石材工程、施工、加工、裝潢等一站式服務。服務範圍涵蓋花蓮、台北，是您值得信賴的石材公司。"
         keywords="蕙佑石材,石材公司,花蓮石材公司,大理石工廠,花蓮大理石工廠,石材工程,大理石施工,石材加工,石材裝潢,石材電視牆,大理石檯面,石材地坪,花蓮石材,台北石材"
-        ogImage="/logo1.png"
+        ogImage="/pic/home/義大利灰珍珠_220524_8.jpg"
         canonical="https://huiyoustone.tw/"
         structuredData={structuredData}
       />
@@ -136,14 +178,14 @@ const HomePage = () => {
 ⼤ ⾃ 然 鬼 斧 神 ⼯ 之 驚 奇 ， 並 獲 五 星 級 連 鎖 觀 光 飯 店 及 北 部 豪 宅
 建 案 採 購 運 ⽤ ， 相 得 益 彰 迭 獲 好 評 。
                 </p>
-              <p className="text-gray-500 mb-6">Huiyou Stone Materials management team was established in 2008, specializing in the wholesale of various stone materials. We uphold the principle of service excellence while adapting to current trends and meeting the needs of architectural design professionals.</p>
+              <p className="text-gray-500 mb-6">Huiyou Stone management team was established in 2008, specializing in the wholesale of various stone materials. We uphold the principle of service excellence while adapting to current trends and meeting the needs of architectural design professionals.</p>
               <p className="text-gray-500 mb-6">In recent years, we have imported diversified stone materials from overseas, featuring solid textures and varied patterns that showcase nature's extraordinary craftsmanship. These materials have been purchased and utilized by five-star chain resort hotels and luxury residential developments in northern Taiwan, creating complementary effects and receiving widespread acclaim.</p>
     
             </div>
             <div>
               <img 
                 src="/pic/home/LINE_ALBUM_義大利灰珍珠_220524_5.jpg" 
-                alt="蕙佑石材" 
+                alt="義大利灰珍珠" 
                 className="w-full h-auto rounded-md shadow-lg"
               />
             </div>
@@ -165,7 +207,7 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mt-8">
           <img 
               src="/pic/home/義大利灰珍珠_220524_8.jpg" 
-              alt="石材設計" 
+              alt="蕙佑石材" 
               className="w-full w-auto"
             />
             <img 

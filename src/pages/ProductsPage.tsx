@@ -156,6 +156,7 @@ const ProductsPage = () => {
           title="嚴選石材產品 - 蕙佑石材 | 義大利大理石 | 花崗岩 | 石英石"
           description="蕙佑石材提供多樣化優質石材產品，包括義大利進口大理石、天然花崗岩、石英石等。適用於地板、牆面、檯面裝修，品質保證，歡迎洽詢。"
           keywords="石材產品,義大利大理石,花崗岩,石英石,大理石檯面,石材地板,石材牆面,進口石材,天然石材,蕙佑石材產品"
+          ogImage="/pic/product/p1/A01-01.jpg"
           canonical="https://huiyoustone.tw/products"
           structuredData={structuredData}
         />

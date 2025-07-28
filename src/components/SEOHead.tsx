@@ -7,7 +7,7 @@ interface SEOHeadProps {
   ogImage?: string;
   ogType?: string;
   canonical?: string;
-  structuredData?: object;
+  structuredData?: object | object[];
 }
 
 const SEOHead = ({ 
@@ -60,7 +60,9 @@ const SEOHead = ({
 
     const ogImageMeta = document.querySelector('meta[property="og:image"]');
     if (ogImageMeta) {
-      ogImageMeta.setAttribute('content', ogImage);
+      // 確保 ogImage 使用完整的 URL
+      const fullImageUrl = ogImage.startsWith('http') ? ogImage : `https://huiyoustone.tw${ogImage}`;
+      ogImageMeta.setAttribute('content', fullImageUrl);
     }
 
     const ogTypeMeta = document.querySelector('meta[property="og:type"]');
@@ -83,15 +85,19 @@ const SEOHead = ({
 
     // 添加結構化資料
     if (structuredData) {
-      const existingScript = document.querySelector('script[type="application/ld+json"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
+      // 移除現有的結構化資料腳本
+      const existingScripts = document.querySelectorAll('script[type="application/ld+json"]');
+      existingScripts.forEach(script => script.remove());
       
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.textContent = JSON.stringify(structuredData);
-      document.head.appendChild(script);
+      // 處理單個或多個結構化資料
+      const dataArray = Array.isArray(structuredData) ? structuredData : [structuredData];
+      
+      dataArray.forEach((data, index) => {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(data);
+        document.head.appendChild(script);
+      });
     }
 
   }, [title, description, keywords, ogImage, ogType, canonical, structuredData]);

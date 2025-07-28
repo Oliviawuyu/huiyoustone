@@ -92,6 +92,7 @@ const GalleryPage = () => {
         title="礦區實照 - 蕙佑石材 | 石材原產地照片 | 品質保證"
         description="查看蕙佑石材礦區的真實照片，了解我們的石材來源和開採過程。透明的供應鏈，確保為客戶提供最優質的天然石材。"
         keywords="石材礦區,石材原產地,天然石材開採,石材品質,石材來源,礦區照片,蕙佑石材礦區"
+        ogImage="/pic/c/c1.jpg"
         canonical="https://huiyoustone.tw/gallery"
         structuredData={structuredData}
       />

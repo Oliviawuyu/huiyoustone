@@ -14,14 +14,41 @@ const AboutPage = () => {
   };
 
   // 結構化資料 - 關於我們頁面
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "mainEntity": {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "蕙佑石材公司簡介",
+      "description": "蕙佑石材成立於2008年，專營各種石材批售，提供大理石、花崗岩、石英石等優質石材。從選購、切割、加工到安裝，提供一站式專業服務。",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "蕙佑石材",
+        "alternateName": "Huiyou Stone",
+        "foundingDate": "2008",
+        "description": "蕙佑石材經營團隊於2008年成立，專營各種石材批售。秉持著服務至上的理念，並配合流行趨勢及建築設計業者之需求。",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "美工六街20之6號",
+          "addressLocality": "花蓮市",
+          "addressRegion": "花蓮縣",
+          "addressCountry": "TW"
+        },
+        "telephone": "+886-3-8235309",
+        "email": "huiyoustone@gmail.com",
+        "url": "https://huiyoustone.tw",
+        "logo": "https://huiyoustone.tw/logo1.png"
+      }
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "Organization",
       "name": "蕙佑石材",
-      "foundingDate": "2008",
+      "alternateName": "Huiyou Stone",
       "description": "蕙佑石材經營團隊於2008年成立，專營各種石材批售。秉持著服務至上的理念，並配合流行趨勢及建築設計業者之需求。",
+      "url": "https://huiyoustone.tw",
+      "logo": "https://huiyoustone.tw/logo1.png",
+      "telephone": "+886-3-8235309",
+      "email": "huiyoustone@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "美工六街20之6號",
@@ -29,11 +56,9 @@ const AboutPage = () => {
         "addressRegion": "花蓮縣",
         "addressCountry": "TW"
       },
-      "telephone": "+886-3-8235309",
-      "email": "huiyoustone@gmail.com",
-      "url": "https://huiyoustone.tw"
+      "foundingDate": "2008"
     }
-  };
+  ];
 
   return (
       <div>
@@ -41,6 +66,7 @@ const AboutPage = () => {
           title="公司簡介 - 蕙佑石材 | 2008年成立專業石材公司"
           description="蕙佑石材成立於2008年，專營各種石材批售，提供大理石、花崗岩、石英石等優質石材。從選購、切割、加工到安裝，提供一站式專業服務。"
           keywords="蕙佑石材公司簡介,石材公司歷史,專業石材團隊,石材批售,大理石公司,花崗岩供應商,石材加工廠"
+          ogImage="/pic/about-01.jpg"
           canonical="https://huiyoustone.tw/about"
           structuredData={structuredData}
         />

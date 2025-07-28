@@ -81,6 +81,7 @@ const CasesPage = () => {
         title="案例分享 - 蕙佑石材 | 石材工程實績 | 專業施工案例"
         description="查看蕙佑石材的專業施工案例，包括商業空間、住宅裝潢、飯店大廳等各類石材工程項目。展現我們在大理石、花崗岩施工方面的專業技術。"
         keywords="石材工程案例,大理石施工實績,商業空間裝潢,住宅石材工程,飯店大廳地板,石材牆面施工,蕙佑石材案例"
+        ogImage="/pic/home/LINE_ALBUM_義大利灰珍珠_220524_5.jpg"
         canonical="https://huiyoustone.tw/cases"
         structuredData={structuredData}
       />
