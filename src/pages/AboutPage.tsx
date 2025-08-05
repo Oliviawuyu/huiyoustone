@@ -107,11 +107,24 @@ const AboutPage = () => {
                   我們的目標是透過優質的石材，為客戶打造舒適、美觀且耐用的生活空間。無論是住宅、商業空間還是公共建築，蕙佑石材都能滿足您的需求。
                 </p>
               </div>
-
+              <div className="mt-12">
+                <img
+                    src="/pic/logo/logo1去背.png"
+                    alt="蕙佑石材"
+                    className="w-1/2 md:w-1/3 h-auto rounded-lg shadow-lg p-10"
+                />
+              </div>
+              <div className="mt-12">
+                <img
+                    src="/pic/home/義大利灰珍珠_220524_8.jpg"
+                    alt="義大利灰珍珠"
+                    className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
               <div className="mt-12">
                 <img
                     src="/pic/about-01.jpg"
-                    alt="蕙佑石材"
+                    alt="義大利灰珍珠"
                     className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>

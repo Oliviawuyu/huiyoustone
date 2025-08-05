@@ -184,9 +184,9 @@ const HomePage = () => {
             </div>
             <div>
               <img 
-                src="/pic/home/LINE_ALBUM_義大利灰珍珠_220524_5.jpg" 
+                src="/pic/logo/logo1去背.png" 
                 alt=""
-                className="w-full h-auto rounded-md shadow-lg"
+                className="p-20 py-6 md:p-32 md:py-32rounded-md shadow-lg"
               />
             </div>
           </div>
@@ -217,6 +217,11 @@ const HomePage = () => {
             />
             <img 
               src="/pic/home/義大利灰珍珠_220524_0 (1).jpg" 
+              alt="石材設計" 
+              className="w-full w-auto"
+            />
+               <img 
+              src="/pic/home/LINE_ALBUM_義大利灰珍珠_220524_5.jpg" 
               alt="石材設計" 
               className="w-full w-auto"
             />

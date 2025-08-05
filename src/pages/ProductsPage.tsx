@@ -65,7 +65,7 @@ const ProductsPage = () => {
   const products = [
     {
       id: 1,
-      name: "義大利灰珍珠",
+      name: "比利時木紋",
       description: "高級大理石，質地細緻，色澤優雅",
       image: "/pic/product/p1/A01-01.jpg",
       category: "大理石",
@@ -77,31 +77,33 @@ const ProductsPage = () => {
         "/pic/product/p1/A01-05.jpg"
       ],
       specifications: {
-        origin: "義大利",
-        size: "300x600mm",
-        thickness: "12mm",
-        finish: "拋光面",
+        origin: "",
+        size: "",
+        thickness: "",
+        finish: "",
         application: "室內地板、牆面、檯面"
       }
     },
     {
       id: 2,
-      name: "義大利白大理石",
-      description: "純白大理石，質地細緻，適合各種裝潢風格",
-      image: "https://pic03.eapple.com.tw/huiyoustone/about-06.jpg",
+      name: "義大利灰珍珠",
+      description: "高級大理石，質地細緻，色澤優雅",
+      image: "/pic/product/義大利灰珍珠/義大利灰珍珠202203.jpg",
       category: "大理石",
       detailImages: [
-        "https://pic03.eapple.com.tw/huiyoustone/about-06.jpg",
-        "https://pic03.eapple.com.tw/huiyoustone/about-07.jpg",
-        "https://pic03.eapple.com.tw/huiyoustone/about-08.jpg",
-        "https://pic03.eapple.com.tw/huiyoustone/about-010.jpg"
+        "/pic/product/義大利灰珍珠/義大利灰珍珠202203.jpg",
+        "/pic/product/義大利灰珍珠/義大利灰珍珠 (2).jpg",
+        "/pic/product/義大利灰珍珠/義大利灰珍珠.jpg",
+        "/pic/product/義大利灰珍珠/義大利灰珍珠3.jpg",
+        "/pic/product/義大利灰珍珠/義大利灰珍珠202203.jpg",
+        "/pic/product/義大利灰珍珠/義大利灰珍珠202204  (1).jpg",
       ],
       specifications: {
         origin: "義大利",
-        size: "400x800mm",
-        thickness: "15mm",
-        finish: "霧面",
-        application: "室內牆面、地板裝飾"
+        size: "",
+        thickness: "",
+        finish: "",
+        application: "高光澤、不易含水好清潔。適合地坪、電視牆、檯面、牆面"
       }
     }
   ];
