@@ -361,7 +361,8 @@ const CasesPage = () => {
           {/* 比利時木紋主展示區塊 */}
           <div className="mb-16 bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="p-6 border-b border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">比利時木紋  <span className="text-amber-700 font-normal">Belgian Wood Grain</span></h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">比利時木紋</h3>
+              <p className="text-amber-700 font-normal mb-2">Belgian Wood Grain</p>
               <p className="mx-auto text-gray-600">
               比利時木紋石材以其獨特的木質紋理和優雅的色澤，為空間帶來自然溫馨的氛圍。
               以下展示我們在比利時木紋石材施工方面的專業案例。
@@ -429,7 +430,8 @@ const CasesPage = () => {
           {/* 義大利灰珍珠主展示區塊 */}
           <div className="mb-16 bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="p-6 border-b border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">義大利灰珍珠   <span className="text-amber-700 font-normal">Italian Gray Pearl</span></h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">義大利灰珍珠</h3>
+              <p className="text-amber-700 font-normal mb-2">Italian Gray Pearl</p>
               <p className="text-gray-600">義大利灰珍珠石材以其獨特的灰色調和優雅的紋理，為空間帶來低調奢華的氛圍。
               以下展示我們在義大利灰珍珠石材施工方面的專業案例。</p>
             </div>
