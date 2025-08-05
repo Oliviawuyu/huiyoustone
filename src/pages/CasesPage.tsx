@@ -173,54 +173,6 @@ const CasesPage = () => {
   // 義大利灰珍珠案例照片
   const italianGrayPearlCases = [
     {
-      id: 1,
-      title: "義大利灰珍珠案例1",
-      image: "/pic/case/義大利灰珍珠/義大利灰珍珠案例1.jpg",
-      description: "義大利灰珍珠石材牆面施工"
-    },
-    {
-      id: 2,
-      title: "義大利灰珍珠案例2",
-      image: "/pic/case/義大利灰珍珠/義大利灰珍珠案例2.jpg",
-      description: "義大利灰珍珠石材地板鋪設"
-    },
-    {
-      id: 3,
-      title: "義大利灰珍珠案例3",
-      image: "/pic/case/義大利灰珍珠/義大利灰珍珠案例3.jpg",
-      description: "義大利灰珍珠石材檯面應用"
-    },
-    {
-      id: 4,
-      title: "義大利灰珍珠案例4",
-      image: "/pic/case/義大利灰珍珠/義大利灰珍珠案例.jpg",
-      description: "義大利灰珍珠石材整體設計"
-    },
-    {
-      id: 5,
-      title: "義大利灰珍珠案例5",
-      image: "/pic/case/義大利灰珍珠/義大利灰珍珠.jpg",
-      description: "義大利灰珍珠石材細節展示"
-    },
-    {
-      id: 6,
-      title: "義大利灰珍珠案例6",
-      image: "/pic/case/義大利灰珍珠/義大利灰珍珠實例.jpg",
-      description: "義大利灰珍珠石材完工效果"
-    },
-    {
-      id: 7,
-      title: "義大利灰珍珠案例7",
-      image: "/pic/case/義大利灰珍珠/電視牆3.jpg",
-      description: "義大利灰珍珠電視牆設計"
-    },
-    {
-      id: 8,
-      title: "義大利灰珍珠案例8",
-      image: "/pic/case/義大利灰珍珠/義大利灰珍珠_220524_0.jpg",
-      description: "義大利灰珍珠石材空間應用"
-    },
-    {
       id: 9,
       title: "義大利灰珍珠案例8",
       image: "/pic/case/義大利灰珍珠/義大利灰珍珠_220524_1.jpg",
@@ -273,6 +225,54 @@ const CasesPage = () => {
       title: "義大利灰珍珠案例13",
       image: "/pic/case/義大利灰珍珠/LINE_ALBUM_義大利灰珍珠_220524_6.jpg",
       description: "義大利灰珍珠石材應用實例"
+    },
+    {
+      id: 1,
+      title: "義大利灰珍珠案例1",
+      image: "/pic/case/義大利灰珍珠/義大利灰珍珠案例1.jpg",
+      description: "義大利灰珍珠石材牆面施工"
+    },
+    {
+      id: 2,
+      title: "義大利灰珍珠案例2",
+      image: "/pic/case/義大利灰珍珠/義大利灰珍珠案例2.jpg",
+      description: "義大利灰珍珠石材地板鋪設"
+    },
+    {
+      id: 3,
+      title: "義大利灰珍珠案例3",
+      image: "/pic/case/義大利灰珍珠/義大利灰珍珠案例3.jpg",
+      description: "義大利灰珍珠石材檯面應用"
+    },
+    {
+      id: 4,
+      title: "義大利灰珍珠案例4",
+      image: "/pic/case/義大利灰珍珠/義大利灰珍珠案例.jpg",
+      description: "義大利灰珍珠石材整體設計"
+    },
+    {
+      id: 5,
+      title: "義大利灰珍珠案例5",
+      image: "/pic/case/義大利灰珍珠/義大利灰珍珠.jpg",
+      description: "義大利灰珍珠石材細節展示"
+    },
+    {
+      id: 6,
+      title: "義大利灰珍珠案例6",
+      image: "/pic/case/義大利灰珍珠/義大利灰珍珠實例.jpg",
+      description: "義大利灰珍珠石材完工效果"
+    },
+    {
+      id: 7,
+      title: "義大利灰珍珠案例7",
+      image: "/pic/case/義大利灰珍珠/電視牆3.jpg",
+      description: "義大利灰珍珠電視牆設計"
+    },
+    {
+      id: 8,
+      title: "義大利灰珍珠案例8",
+      image: "/pic/case/義大利灰珍珠/義大利灰珍珠_220524_0.jpg",
+      description: "義大利灰珍珠石材空間應用"
     },
   
   ];
@@ -549,7 +549,7 @@ const CasesPage = () => {
             </button>
 
             {/* 主圖片 */}
-            <div className="relative max-h-[85vh] max-w-full">
+            <div className="relative max-h-[85vh] max-w-full top-[-40px]">
               <img
                 src={currentCaseSeries === 'belgian' ? belgianWoodGrainCases[currentImageIndex].image : italianGrayPearlCases[currentImageIndex].image}
                 alt={currentCaseSeries === 'belgian' ? belgianWoodGrainCases[currentImageIndex].title : italianGrayPearlCases[currentImageIndex].title}
@@ -570,7 +570,7 @@ const CasesPage = () => {
             </div>
 
             {/* 縮略圖預覽 */}
-            <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-black/30 rounded-lg p-2">
+            <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 bg-black/30 rounded-lg p-2">
               <div className="flex space-x-2 overflow-x-auto w-[90vw] max-w-4xl">
                 {currentCaseSeries === 'belgian' ? (
                   belgianWoodGrainCases.map((caseItem, index) => (
