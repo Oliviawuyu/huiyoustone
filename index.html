@@ -54,6 +54,22 @@
     
     <!-- 生產環境配置檔案 - 必須在主應用程式之前載入 -->
     <script defer src="/config.js"></script>
+    
+    <!-- SPA 路由處理腳本 - 處理從 404.html 重定向過來的路由 -->
+    <script>
+      // 檢查是否從 404.html 重定向過來
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    
     <script>
       // 檢查配置檔案是否正確載入
       if (typeof window.GOOGLE_MAPS_API_KEY === 'undefined') {

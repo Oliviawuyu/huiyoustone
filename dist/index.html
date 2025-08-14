@@ -22,27 +22,30 @@
     <meta property="og:title" content="蕙佑石材 - 專業石材公司 | 花蓮大理石工廠 | 石材工程施工" />
     <meta property="og:description" content="蕙佑石材於2008年成立，專營大理石、花崗岩等石材批售。提供石材工程、施工、加工、裝潢等一站式服務。服務範圍涵蓋花蓮、台北，是您值得信賴的石材公司。" />
     <meta property="og:url" content="https://huiyoustone.tw/" />
-    <meta property="og:image" content="https://huiyoustone.tw/logo1.png" />
+    <meta property="og:image" content="https://huiyoustone.tw/pic/home/義大利灰珍珠_220524_8.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="蕙佑石材" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     
-    <!-- Twitter Card Meta標籤 -->
+      <!-- Twitter Card Meta標籤 -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="蕙佑石材 - 專業石材公司 | 花蓮大理石工廠" />
     <meta name="twitter:description" content="蕙佑石材於2008年成立，專營大理石、花崗岩等石材批售。提供專業石材工程施工服務。" />
-    <meta name="twitter:image" content="https://huiyoustone.tw/logo1.png" />
-    
+    <meta name="twitter:image" content="https://huiyoustone.tw/pic/home/義大利灰珍珠_220524_8.jpg" />
+    <meta name="twitter:image:alt" content="蕙佑石材" />
+
     <!-- 技術SEO Meta標籤 -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
     <link rel="canonical" href="https://huiyoustone.tw/" />
     
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon-32.ico" />
-    <link rel="icon" type="image/x-icon" sizes="16x16" href="/favicon-16.ico" />
-    <link rel="icon" type="image/x-icon" sizes="48x48" href="/favicon-48.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="./favicon-32.ico" />
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="./favicon-16.ico" />
+    <link rel="icon" type="image/x-icon" sizes="48x48" href="./favicon-48.ico" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     
     <!-- DNS預取和預載入 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,7 +53,23 @@
     <link rel="dns-prefetch" href="//www.google-analytics.com" />
     
     <!-- 生產環境配置檔案 - 必須在主應用程式之前載入 -->
-    <script defer src="/config.js"></script>
+    <script defer src="./config.js"></script>
+    
+    <!-- SPA 路由處理腳本 - 處理從 404.html 重定向過來的路由 -->
+    <script>
+      // 檢查是否從 404.html 重定向過來
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    
     <script>
       // 檢查配置檔案是否正確載入
       if (typeof window.GOOGLE_MAPS_API_KEY === 'undefined') {
@@ -96,9 +115,9 @@
       }
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-1d79b91b.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/vendor-bac0f14f.js">
-    <link rel="stylesheet" href="/assets/index-57b7b53d.css">
+    <script type="module" crossorigin src="./assets/index-809274c0.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/vendor-1d77bfd8.js">
+    <link rel="stylesheet" href="./assets/index-f268b221.css">
   </head>
   <body>
     <div id="root"></div>
