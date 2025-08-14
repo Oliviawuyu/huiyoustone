@@ -178,7 +178,7 @@ const AboutPage = () => {
                         </svg>
                       </a>
                       <a
-                          href="line://ti/p/~jine1118"
+                          href={navigator.userAgent.includes('Mobile') ? "line://ti/p/~jine1118" : "https://line.me/ti/p/~jine1118"}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-[#06C755] text-white p-2 rounded-full hover:bg-[#05b44c] transition-colors"
